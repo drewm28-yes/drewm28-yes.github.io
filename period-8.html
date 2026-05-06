@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Period 8: 1945–1980 — APUSH Scholar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+/* ═══════════════════════════════════════════════
+   APUSH SCHOLAR — SHARED STYLESHEET
+   Used by all period pages + themes.html + skills.html
+════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:          #0f1b2d;
+  --navy-mid:      #1a2e48;
+  --navy-light:    #243d5c;
+  --gold:          #c8993a;
+  --gold-light:    #e8c36a;
+  --gold-pale:     #f5ecd4;
+  --parchment:     #f7f1e3;
+  --parchment-dark:#ede4cc;
+  --crimson:       #8b1f2f;
+  --crimson-light: #b8283c;
+  --text-dark:     #1c1c1c;
+  --text-mid:      #3a3a3a;
+  --text-muted:    #6b6b6b;
+  --white:         #ffffff;
+  --sidebar-w:     280px;
+  /* MAGPIES theme colors */
+  --mig:  #0d9488;
+  --wor:  #2563eb;
+  --geo:  #16a34a;
+  --pce:  #8b1f2f;
+  --nat:  #7c3aed;
+  --wxt:  #d97706;
+  --soc:  #db2777;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--parchment);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(15,27,45,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,153,58,0.25);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.nav-brand-star {
+  width: 28px; height: 28px; background: var(--gold);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.nav-brand-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--white); }
+.nav-brand-text span { color:var(--gold); }
+.nav-links { display:flex; align-items:center; gap:0.25rem; list-style:none; }
+.nav-links a {
+  display:block; padding:0.4rem 0.8rem; color:rgba(255,255,255,0.7);
+  text-decoration:none; font-size:0.88rem; border-radius:4px;
+  transition:color 0.2s,background 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--gold); background:rgba(200,153,58,0.1); }
+.nav-links .nav-cta a { background:var(--crimson); color:var(--white); }
+.nav-links .nav-cta a:hover { background:var(--crimson-light); }
+@media(max-width:640px){ .nav-links { display:none; } }
+
+/* ── PERIOD HERO ── */
+.period-hero {
+  background: var(--navy);
+  padding: 6rem 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+.period-hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(200,153,58,0.1) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 80% at 15% 30%, rgba(139,31,47,0.15) 0%, transparent 65%);
+}
+.period-hero-inner {
+  position:relative; z-index:1; max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end;
+}
+.breadcrumb {
+  font-family:'JetBrains Mono',monospace; font-size:0.68rem;
+  letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem;
+  display:flex; align-items:center; gap:0.5rem;
+}
+.breadcrumb a { color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--gold); }
+.breadcrumb-sep { color:rgba(255,255,255,0.25); }
+.period-eyebrow {
+  font-family:'JetBrains Mono',monospace; font-size:0.7rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:rgba(255,255,255,0.45); margin-bottom:0.5rem;
+}
+.period-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3.8rem); font-weight:900;
+  color:var(--white); line-height:1.05; margin-bottom:0.4rem;
+}
+.period-subtitle {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.1rem,2vw,1.5rem);
+  font-weight:400; font-style:italic;
+  color:var(--gold); margin-bottom:1.5rem;
+}
+.period-context { font-size:1.08rem; color:rgba(255,255,255,0.72); max-width:700px; line-height:1.8; }
+.period-meta { display:flex; flex-direction:column; align-items:flex-end; gap:1rem; }
+.period-badge-big {
+  background:var(--gold); color:var(--navy);
+  font-family:'Playfair Display',serif; font-size:3rem; font-weight:900;
+  width:90px; height:90px; display:flex; align-items:center; justify-content:center; border-radius:4px;
+}
+.period-exam-pct { text-align:right; }
+.period-exam-pct-num { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--gold); display:block; }
+.period-exam-pct-label { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; color:rgba(255,255,255,0.4); text-transform:uppercase; }
+@media(max-width:768px){ .period-hero-inner { grid-template-columns:1fr; } .period-meta { align-items:flex-start; flex-direction:row; } }
+
+/* ── TIMELINE SECTION ── */
+.timeline-section {
+  background: var(--navy-mid);
+  padding: 2.5rem 2rem;
+  border-bottom: 2px solid rgba(200,153,58,0.2);
+}
+.timeline-section-inner { max-width:1100px; margin:0 auto; }
+.timeline-section-header {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;
+}
+.timeline-section-tag {
+  font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+}
+.timeline-section-line { flex:1; height:1px; background:rgba(200,153,58,0.25); }
+
+/* Timeline rendered by timeline.js */
+.apush-timeline-wrap { position:relative; }
+.tl-scroll {
+  overflow-x:auto; overflow-y:visible;
+  padding:2.5rem 1rem 1rem;
+  cursor:grab;
+  scrollbar-width:thin; scrollbar-color:rgba(200,153,58,0.4) transparent;
+}
+.tl-scroll:active { cursor:grabbing; }
+.tl-scroll::-webkit-scrollbar { height:4px; }
+.tl-scroll::-webkit-scrollbar-track { background:transparent; }
+.tl-scroll::-webkit-scrollbar-thumb { background:rgba(200,153,58,0.35); border-radius:2px; }
+.tl-track {
+  display:flex; align-items:flex-end;
+  min-width:max-content;
+  padding-bottom:2.5rem;
+  gap:0;
+  position:relative;
+}
+.tl-track::after {
+  content:''; position:absolute;
+  left:0; right:0; bottom:calc(2.5rem + 14px);
+  height:2px; background:rgba(200,153,58,0.3);
+  z-index:0;
+}
+.tl-node {
+  display:flex; flex-direction:column; align-items:center;
+  width:160px; flex-shrink:0;
+  position:relative; z-index:1;
+  cursor:pointer;
+  padding:0 8px;
+  transition:transform 0.2s;
+}
+.tl-node:hover { transform:translateY(-3px); }
+.tl-node-year {
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+  color:rgba(255,255,255,0.5); margin-bottom:0.5rem;
+  letter-spacing:0.08em; transition:color 0.2s;
+}
+.tl-node-dot {
+  width:28px; height:28px; border-radius:50%;
+  border:2.5px solid rgba(200,153,58,0.4);
+  background:var(--navy-mid);
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-bottom:0.6rem;
+}
+.tl-node-dot-inner {
+  width:10px; height:10px; border-radius:50%;
+  background:rgba(200,153,58,0.5);
+  transition:background 0.2s, transform 0.2s;
+}
+.tl-node-label {
+  font-size:0.78rem; color:rgba(255,255,255,0.65);
+  text-align:center; line-height:1.3;
+  max-width:140px; transition:color 0.2s;
+}
+/* Active node state */
+.tl-node.active .tl-node-year { color:var(--gold-light); }
+.tl-node.active .tl-node-dot { border-color:var(--gold); transform:scale(1.2); box-shadow:0 0 16px rgba(200,153,58,0.4); }
+.tl-node.active .tl-node-dot-inner { background:var(--gold); transform:scale(1.1); }
+.tl-node.active .tl-node-label { color:var(--white); font-weight:600; }
+
+/* Detail Panel */
+.tl-detail {
+  max-width:1100px; margin:0 auto;
+  overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease;
+  max-height:0; opacity:0;
+}
+.tl-detail.open { max-height:400px; opacity:1; }
+.tl-detail-inner {
+  background:rgba(255,255,255,0.05);
+  border-radius:0 0 8px 8px;
+  border:1px solid rgba(200,153,58,0.25);
+  border-top:none;
+  padding:1.5rem 2rem;
+  display:grid; grid-template-columns:auto 1fr; gap:1.2rem;
+  align-items:start;
+  border-left:4px solid var(--gold);
+}
+.tl-detail-left { display:flex; flex-direction:column; gap:0.6rem; align-items:flex-start; }
+.tl-detail-year {
+  font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900;
+  color:var(--gold); line-height:1;
+}
+.tl-detail-badge {
+  display:inline-block; padding:0.25rem 0.65rem;
+  border-radius:3px; font-family:'JetBrains Mono',monospace;
+  font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase;
+  font-weight:500;
+}
+.tl-detail-right { }
+.tl-detail-name {
+  font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700;
+  color:var(--white); margin-bottom:0.4rem;
+}
+.tl-detail-summary {
+  font-size:0.97rem; color:rgba(255,255,255,0.75); line-height:1.7; margin-bottom:0.8rem;
+}
+.tl-detail-causation {
+  display:flex; gap:0.6rem; align-items:flex-start;
+  background:rgba(255,255,255,0.04); border-radius:4px; padding:0.65rem 0.9rem;
+}
+.tl-detail-causation-label {
+  font-family:'JetBrains Mono',monospace; font-size:0.62rem;
+  color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;
+  flex-shrink:0; margin-top:0.2rem;
+}
+.tl-detail-causation p { font-size:0.9rem; color:rgba(255,255,255,0.65); line-height:1.6; }
+.tl-detail-close {
+  background:none; border:none; cursor:pointer;
+  color:rgba(255,255,255,0.4); font-size:1rem;
+  padding:0.2rem; margin-left:auto;
+  transition:color 0.2s;
+}
+.tl-detail-close:hover { color:var(--gold); }
+.tl-placeholder {
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+  color:rgba(255,255,255,0.3); letter-spacing:0.1em;
+  padding:1rem 2rem; text-align:center;
+}
+@media(max-width:768px){
+  .tl-node { width:120px; }
+  .tl-detail-inner { grid-template-columns:1fr; }
+}
+
+/* ── CONTENT WRAPPER ── */
+.content-wrapper {
+  max-width:1100px; margin:0 auto; padding:3rem 2rem;
+  display:grid; grid-template-columns:1fr var(--sidebar-w); gap:2.5rem; align-items:start;
+}
+.main-col { min-width:0; }
+.side-col { min-width:0; }
+@media(max-width:768px){
+  .content-wrapper { grid-template-columns:1fr; }
+  .side-col { order:-1; }
+}
+
+/* ── SECTION HEADERS ── */
+.section-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.section-header-line { flex:1; height:1px; background:linear-gradient(to right,rgba(200,153,58,0.5),transparent); }
+.section-tag { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--crimson); white-space:nowrap; }
+.section-title { font-family:'Playfair Display',serif; font-size:1.65rem; font-weight:700; color:var(--navy); margin-bottom:1rem; }
+
+/* ── CARDS ── */
+.card { background:var(--white); border-radius:6px; padding:1.8rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); margin-bottom:2rem; }
+.card-gold-top { border-top:3px solid var(--gold); }
+.card-navy-top { border-top:3px solid var(--navy); }
+.card-crimson-top { border-top:3px solid var(--crimson); }
+
+/* ── EVENTS LIST ── */
+.events-list { list-style:none; }
+.event-item { display:grid; grid-template-columns:60px 1fr; gap:1rem; padding:0.85rem 0; border-bottom:1px solid rgba(0,0,0,0.07); align-items:start; }
+.event-item:last-child { border-bottom:none; }
+.event-year-badge { background:var(--navy); color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:0.7rem; padding:0.3rem 0.4rem; border-radius:3px; text-align:center; line-height:1.3; }
+.event-title { font-weight:600; color:var(--navy); font-size:1rem; margin-bottom:0.2rem; }
+.event-desc { font-size:0.9rem; color:var(--text-muted); line-height:1.55; }
+.event-themes { display:flex; gap:0.35rem; flex-wrap:wrap; margin-top:0.4rem; }
+.theme-pill { font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.08em; padding:0.15rem 0.4rem; border-radius:2px; background:rgba(200,153,58,0.15); color:var(--gold); border:1px solid rgba(200,153,58,0.3); text-transform:uppercase; }
+
+/* ── THEME ACCORDION ── */
+.theme-card { background:var(--white); border-radius:6px; overflow:hidden; margin-bottom:1.2rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); }
+.theme-card-header { display:flex; align-items:center; gap:1rem; padding:1.1rem 1.4rem; cursor:pointer; user-select:none; transition:background 0.2s; }
+.theme-card-header:hover { background:rgba(0,0,0,0.015); }
+.theme-letter { width:40px; height:40px; border-radius:4px; background:var(--navy); color:var(--gold); font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.theme-card-title-wrap { flex:1; }
+.theme-card-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--navy); }
+.theme-card-code { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--gold); text-transform:uppercase; }
+.theme-card-chevron { color:var(--text-muted); font-size:0.8rem; transition:transform 0.25s; }
+.theme-card.open .theme-card-chevron { transform:rotate(180deg); }
+.theme-card-body { display:none; padding:0 1.4rem 1.4rem; border-top:1px solid rgba(0,0,0,0.06); }
+.theme-card.open .theme-card-body { display:block; }
+.theme-card-body p { font-size:0.97rem; color:var(--text-mid); line-height:1.7; margin-bottom:0.8rem; }
+.theme-card-body p:first-child { margin-top:1rem; }
+.theme-evidence { background:var(--parchment); border-radius:4px; padding:0.8rem 1rem; font-size:0.88rem; color:var(--text-mid); }
+.theme-evidence strong { color:var(--navy); }
+
+/* ── CCOT ── */
+.ccot-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.2rem 0; }
+.ccot-box { border-radius:6px; padding:1.3rem; }
+.ccot-box.continuity { background:rgba(15,27,45,0.05); border:1px solid rgba(15,27,45,0.12); }
+.ccot-box.change { background:rgba(139,31,47,0.05); border:1px solid rgba(139,31,47,0.15); }
+.ccot-box-label { font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem; }
+.ccot-box.continuity .ccot-box-label { color:var(--navy); }
+.ccot-box.change .ccot-box-label { color:var(--crimson); }
+.ccot-box-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:0.6rem; color:var(--navy); }
+.ccot-box ul { list-style:none; font-size:0.9rem; color:var(--text-mid); }
+.ccot-box ul li { padding:0.3rem 0; padding-left:1rem; position:relative; border-bottom:1px solid rgba(0,0,0,0.05); line-height:1.5; }
+.ccot-box ul li:last-child { border-bottom:none; }
+.ccot-box.continuity ul li::before { content:'='; position:absolute; left:0; color:var(--navy); font-weight:700; }
+.ccot-box.change ul li::before { content:'→'; position:absolute; left:0; color:var(--crimson); font-weight:700; }
+.ccot-thesis-box { background:var(--navy); border-radius:6px; padding:1.4rem; margin-top:1.2rem; }
+.ccot-thesis-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+.ccot-thesis-text { font-size:1rem; color:rgba(255,255,255,0.85); font-style:italic; line-height:1.75; }
+@media(max-width:600px){ .ccot-grid { grid-template-columns:1fr; } }
+
+/* ── PRIMARY SOURCE ── */
+.source-excerpt { background:var(--navy); border-radius:6px; padding:2rem; margin-bottom:1.5rem; position:relative; }
+.source-excerpt::before { content:'C'; position:absolute; top:-0.5rem; left:1.2rem; font-family:'Playfair Display',serif; font-size:5rem; color:var(--gold); opacity:0.25; line-height:1; }
+.source-excerpt-text { font-size:1.1rem; color:rgba(255,255,255,0.88); font-style:italic; line-height:1.9; position:relative; z-index:1; }
+.source-excerpt-attr { margin-top:1.2rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; color:var(--gold); }
+
+/* ── HIPP ── */
+.hipp-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.hipp-box { background:var(--white); border-radius:6px; border:1px solid rgba(0,0,0,0.1); overflow:hidden; }
+.hipp-box-header { background:var(--navy-mid); padding:0.7rem 1rem; display:flex; align-items:center; gap:0.6rem; }
+.hipp-letter { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; color:var(--gold); line-height:1; }
+.hipp-name { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; color:var(--white); }
+.hipp-box-prompt { padding:0.8rem 1rem 0.5rem; font-size:0.82rem; color:var(--text-muted); font-style:italic; border-bottom:1px solid rgba(0,0,0,0.07); }
+.hipp-textarea { width:100%; border:none; outline:none; padding:0.8rem 1rem; font-family:'Crimson Pro',serif; font-size:0.95rem; color:var(--text-dark); background:transparent; resize:vertical; min-height:90px; line-height:1.6; }
+.hipp-textarea::placeholder { color:rgba(0,0,0,0.25); font-style:italic; }
+.hipp-actions { margin-top:1.2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+@media(max-width:600px){ .hipp-grid { grid-template-columns:1fr; } }
+
+/* ── CALLOUTS ── */
+.callout { border-radius:6px; padding:1.3rem 1.5rem; margin:1.5rem 0; display:flex; gap:1rem; align-items:flex-start; }
+.callout-exam { background:rgba(15,27,45,0.07); border-left:4px solid var(--navy); }
+.callout-warning { background:rgba(200,153,58,0.1); border-left:4px solid var(--gold); }
+.callout-tip { background:rgba(139,31,47,0.07); border-left:4px solid var(--crimson); }
+.callout-icon { font-size:1.2rem; flex-shrink:0; margin-top:0.1rem; }
+.callout-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.3rem; }
+.callout-exam .callout-label { color:var(--navy); }
+.callout-warning .callout-label { color:#7a6010; }
+.callout-tip .callout-label { color:var(--crimson); }
+.callout-body { font-size:0.95rem; color:var(--text-mid); line-height:1.65; }
+.callout-body strong { color:var(--navy); }
+
+/* ── BUTTONS ── */
+.btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.5rem; border-radius:4px; border:none; cursor:pointer; font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; letter-spacing:0.03em; transition:background 0.2s, transform 0.15s; }
+.btn-primary { background:var(--crimson); color:var(--white); }
+.btn-primary:hover { background:var(--crimson-light); transform:translateY(-1px); }
+.btn-secondary { background:transparent; color:var(--navy); border:1.5px solid var(--navy); }
+.btn-secondary:hover { background:var(--navy); color:var(--white); }
+
+/* ── SIDEBAR ── */
+.sidebar-card { background:var(--white); border-radius:6px; overflow:hidden; margin-bottom:1.5rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); }
+.sidebar-card-header { background:var(--navy); padding:0.9rem 1.2rem; }
+.sidebar-card-header.crimson { background:var(--crimson); }
+.sidebar-card-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--white); }
+.sidebar-card-subtitle { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; }
+.sidebar-card-body { padding:1rem 1.2rem; }
+.key-term { padding:0.55rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+.key-term:last-child { border-bottom:none; }
+.key-term-word { font-weight:600; color:var(--navy); font-size:0.95rem; display:block; }
+.key-term-word.accent { color:var(--crimson); }
+.key-term-def { font-size:0.82rem; color:var(--text-muted); line-height:1.5; }
+.key-concept-item { padding:0.6rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+.key-concept-item:last-child { border-bottom:none; }
+.key-concept-num { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--crimson); text-transform:uppercase; margin-bottom:0.2rem; }
+.key-concept-text { font-size:0.88rem; color:var(--text-mid); line-height:1.5; font-style:italic; }
+.mini-timeline { position:relative; padding-left:1.5rem; }
+.mini-timeline::before { content:''; position:absolute; left:5px; top:4px; bottom:4px; width:1px; background:linear-gradient(to bottom, var(--gold), rgba(200,153,58,0.2)); }
+.mini-tl-item { position:relative; padding-bottom:0.85rem; }
+.mini-tl-item:last-child { padding-bottom:0; }
+.mini-tl-dot { position:absolute; left:-1.5rem; width:10px; height:10px; background:var(--gold); border-radius:50%; top:4px; }
+.mini-tl-year { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--gold); font-weight:500; margin-bottom:0.1rem; }
+.mini-tl-event { font-size:0.88rem; color:var(--text-mid); line-height:1.45; }
+.period-nav-strip { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.period-nav-chip { display:block; padding:0.3rem 0.6rem; background:var(--parchment); border:1px solid rgba(0,0,0,0.1); border-radius:3px; text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--text-muted); transition:background 0.2s, color 0.2s; }
+.period-nav-chip:hover { background:var(--navy); color:var(--gold); }
+.period-nav-chip.active { background:var(--crimson); color:var(--white); border-color:var(--crimson); }
+
+/* ── BACK TO TOP ── */
+.back-top { display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.15); transition:color 0.2s; margin-bottom:2rem; }
+.back-top:hover { color:var(--crimson); }
+
+/* ── THESIS BUILDER ── */
+.thesis-builder { background:var(--navy); border-radius:6px; padding:2rem; margin:1.5rem 0; color:var(--white); }
+.thesis-builder-title { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--gold); margin-bottom:0.4rem; }
+.thesis-builder-sub { font-size:0.9rem; color:rgba(255,255,255,0.55); margin-bottom:1.5rem; }
+.thesis-parts { display:grid; gap:1rem; }
+.thesis-part-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; margin-bottom:0.4rem; }
+.thesis-input { width:100%; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:4px; padding:0.7rem 1rem; color:var(--white); font-family:'Crimson Pro',serif; font-size:1rem; outline:none; transition:border-color 0.2s; }
+.thesis-input:focus { border-color:var(--gold); background:rgba(255,255,255,0.1); }
+.thesis-input::placeholder { color:rgba(255,255,255,0.25); font-style:italic; }
+.thesis-preview { margin-top:1.2rem; background:rgba(200,153,58,0.1); border:1px solid rgba(200,153,58,0.3); border-radius:4px; padding:1rem; font-style:italic; font-size:1rem; color:rgba(255,255,255,0.4); min-height:60px; line-height:1.7; }
+
+/* ── FOOTER ── */
+footer { background:var(--navy); border-top:1px solid rgba(200,153,58,0.2); padding:2.5rem 2rem; text-align:center; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem; }
+.footer-text { font-size:0.88rem; color:rgba(255,255,255,0.4); }
+.footer-links { display:flex; justify-content:center; gap:2rem; margin:1rem 0; list-style:none; }
+.footer-links a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+.footer-links a:hover { color:var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.fade-in-up { animation:fadeInUp 0.55s ease both; }
+
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand"><div class="nav-brand-star"></div><span class="nav-brand-text">APUSH <span>Scholar</span></span></a>
+  <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../themes.html">Themes</a></li><li><a href="../skills.html">Essay Skills</a></li><li><a href="period-8.html" class="active">Periods</a></li><li class="nav-cta"><a href="../skills.html">Exam Guide</a></li></ul>
+</nav>
+
+<header class="period-hero">
+  <div class="period-hero-bg"></div>
+  <div class="period-hero-inner">
+    <div>
+      <nav class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../index.html#periods">Periods</a><span class="breadcrumb-sep">/</span>Period 8</nav>
+      <div class="period-eyebrow">APUSH Historical Period</div>
+      <h1 class="period-title">Period 8</h1>
+      <div class="period-subtitle">Cold War, Civil Rights &amp; the Liberal Consensus</div>
+      <p class="period-context">The thirty-five years between 1945 and 1980 were defined by two parallel struggles: one external, one internal. Externally, the United States and the Soviet Union locked into the Cold War — a global ideological contest that shaped every dimension of American foreign policy, from the Korean peninsula to the jungles of Vietnam. Internally, the civil rights movement challenged the fundamental contradiction between America's democratic self-image and its racial apartheid system, forcing a legislative revolution through the Civil Rights Act (1964) and Voting Rights Act (1965). The era's idealism — Kennedy's New Frontier, Johnson's Great Society — collided with Vietnam, urban riots, and Watergate, producing the profound disillusionment that would fuel the conservative ascendancy of the 1980s.</p>
+    </div>
+    <div class="period-meta">
+      <div class="period-badge-big">8</div>
+      <div class="period-exam-pct"><span class="period-exam-pct-num">15%</span><span class="period-exam-pct-label">of APUSH Exam</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="timeline-section">
+  <div class="timeline-section-inner">
+    <div class="timeline-section-header"><span class="timeline-section-tag">Interactive Timeline</span><div class="timeline-section-line"></div><span class="timeline-section-tag">Click a node to explore</span></div>
+    <div id="period-timeline"></div>
+  </div>
+</section>
+
+<div class="content-wrapper">
+  <main class="main-col">
+    <a href="#" class="back-top">Back to Top</a>
+    <div class="section-header"><span class="section-tag">College Board Required</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Key Concepts &amp; Major Events</h2>
+    <div class="callout callout-exam"><span class="callout-icon">🏛️</span><div><div class="callout-label">Exam Focus</div><div class="callout-body">Period 8 is <strong>15% of the exam</strong>. The civil rights movement — its strategies, key figures, legislative achievements, and limits — is the most tested topic. Know: Brown v. Board, Montgomery Bus Boycott, the Civil Rights Act and Voting Rights Act, and MLK's "Letter from Birmingham Jail." Vietnam and its domestic consequences are also heavily tested.</div></div></div>
+
+    <div class="card card-navy-top">
+      <ul class="events-list">
+        <li class="event-item"><div class="event-year-badge">1947–50</div><div class="event-content"><div class="event-title">Truman Doctrine &amp; Containment</div><div class="event-desc">President Truman's 1947 address to Congress declared American commitment to "support free peoples who are resisting attempted subjugation" — establishing the <strong>containment doctrine</strong> that would guide U.S. Cold War policy for four decades. The <strong>Marshall Plan</strong> ($13 billion to rebuild Western Europe), the creation of NATO, and <strong>NSC-68</strong>'s call for massive military buildup formalized the Cold War framework. The Soviet atomic bomb (1949) and Communist victory in China shattered American security assumptions.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1950–53</div><div class="event-content"><div class="event-title">Korean War &amp; McCarthyism</div><div class="event-desc">The Korean War — fought to repel North Korean and then Chinese forces — ended in a 38th-parallel stalemate, establishing the template of "limited war" under nuclear deterrence. At home, <strong>McCarthyism</strong> — Senator Joseph McCarthy's reckless anti-Communist crusade — produced the Red Scare: HUAC hearings, Hollywood blacklists, and loyalty oaths that chilled civil liberties and free speech. The Rosenberg executions (1953) reflected the era's paranoia.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span><span class="theme-pill">NAT</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1954–57</div><div class="event-content"><div class="event-title">Brown v. Board &amp; Montgomery Bus Boycott</div><div class="event-desc">Chief Justice Earl Warren's unanimous ruling in <em>Brown v. Board of Education</em> (1954) declared that "separate but equal" was inherently unequal, overturning <em>Plessy v. Ferguson</em>. The following year, <strong>Rosa Parks</strong>'s arrest and the subsequent <strong>Montgomery Bus Boycott</strong> (1955–56) — sustained for 381 days under Dr. Martin Luther King Jr.'s leadership — demonstrated the power of nonviolent mass resistance. The Southern Manifesto (1956) signaled the depth of white southern resistance to desegregation.</div><div class="event-themes"><span class="theme-pill">PCE</span><span class="theme-pill">SOC</span><span class="theme-pill">NAT</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1961–63</div><div class="event-content"><div class="event-title">JFK, the New Frontier &amp; Civil Rights Crisis</div><div class="event-desc">John F. Kennedy's presidency combined Cold War confrontation — the <strong>Bay of Pigs disaster</strong>, the <strong>Cuban Missile Crisis</strong> (1962, the closest the world came to nuclear war), and the Berlin Wall — with growing civil rights pressure. Freedom Riders faced violent mobs; James Meredith integrated Ole Miss under federal marshal protection; and Bull Connor's fire hoses and police dogs in Birmingham forced Kennedy to publicly embrace civil rights legislation. Kennedy's assassination (November 22, 1963) shocked the nation.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span><span class="theme-pill">SOC</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1964–65</div><div class="event-content"><div class="event-title">Civil Rights Act, Voting Rights Act &amp; Great Society</div><div class="event-desc">Lyndon Johnson leveraged Kennedy's death and his own congressional mastery to pass the landmark <strong>Civil Rights Act of 1964</strong> (banning discrimination in public accommodations and employment) and the <strong>Voting Rights Act of 1965</strong> (eliminating voter suppression mechanisms). His <strong>Great Society</strong> expanded the New Deal framework: Medicare, Medicaid, the Elementary and Secondary Education Act, and the Immigration Act of 1965 collectively represented the largest expansion of federal programs since the New Deal.</div><div class="event-themes"><span class="theme-pill">PCE</span><span class="theme-pill">SOC</span><span class="theme-pill">NAT</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1965–73</div><div class="event-content"><div class="event-title">Vietnam War &amp; Domestic Upheaval</div><div class="event-desc">The Gulf of Tonkin Resolution (1964) gave Johnson blank-check authority to escalate U.S. involvement in Vietnam. By 1968, 500,000 American troops were deployed; the <strong>Tet Offensive</strong> shattered public confidence in official optimism. The 1968 assassinations of MLK and Robert Kennedy, urban riots, and the Democratic convention protests crystallized a nation in crisis. Nixon's secret bombing of Cambodia (1970) and the <strong>My Lai massacre</strong> revelations deepened anti-war sentiment. The War Powers Act (1973) reasserted congressional authority over military action.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span><span class="theme-pill">SOC</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1972–74</div><div class="event-content"><div class="event-title">Watergate &amp; the Crisis of Legitimacy</div><div class="event-desc">The <strong>Watergate break-in</strong> (June 1972) and Nixon's subsequent cover-up — revealed through John Dean's Senate testimony and White House tape recordings — produced the most severe constitutional crisis since the Civil War. Nixon's resignation (August 8, 1974) — the first in American history — represented both a triumph for constitutional checks and balances and a profound wound to public trust in government that would fuel anti-government sentiment into the Reagan era.</div><div class="event-themes"><span class="theme-pill">PCE</span><span class="theme-pill">NAT</span></div></div></li>
+      </ul>
+    </div>
+
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">MAGPIES Framework</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Thematic Breakdown</h2>
+    <div class="theme-card open"><div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">S</div><div class="theme-card-title-wrap"><div class="theme-card-name">Social Structures (SOC)</div><div class="theme-card-code">The civil rights movement &amp; the liberation movements it inspired</div></div><span class="theme-card-chevron">▼</span></div><div class="theme-card-body"><p>The civil rights movement is Period 8's defining social story. It proceeded in phases: early legal challenges through the NAACP (<em>Brown</em>), then nonviolent direct action through SCLC and SNCC (sit-ins, Freedom Rides, Birmingham, Selma), then legislative achievements (Civil Rights Act, Voting Rights Act). The movement's successes inspired parallel movements: the <strong>feminist movement</strong> (Betty Friedan's <em>The Feminine Mystique</em>, NOW, Title IX), the <strong>United Farm Workers</strong> (Cesar Chavez), the <strong>American Indian Movement</strong>, and the emerging <strong>gay rights movement</strong> (Stonewall, 1969). The Black Power movement, meanwhile, challenged nonviolence and integration as the sole strategies for Black liberation.</p><div class="theme-evidence"><strong>Evidence:</strong> Brown v. Board · Montgomery Bus Boycott · Sit-ins (Greensboro) · Freedom Rides · MLK "Letter from Birmingham Jail" · March on Washington · Civil Rights Act/VRA · Black Power · Betty Friedan · Cesar Chavez · AIM · Stonewall</div></div></div>
+    <div class="theme-card"><div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">A</div><div class="theme-card-title-wrap"><div class="theme-card-name">America in the World (WOR)</div><div class="theme-card-code">Cold War, containment, &amp; Vietnam</div></div><span class="theme-card-chevron">▼</span></div><div class="theme-card-body"><p>The Cold War structured virtually every dimension of American foreign policy from 1945 to 1991. Containment — the doctrine that the U.S. must resist Soviet expansion wherever it occurred — produced the Korean War, CIA coups (Iran 1953, Guatemala 1954), the Vietnam War, and the nuclear arms race. The <strong>military-industrial complex</strong> (Eisenhower's farewell warning) became a permanent feature of American economic and political life. Détente under Nixon and Kissinger temporarily softened Cold War tensions, but the Soviet invasion of Afghanistan (1979) and Iran hostage crisis renewed Cold War anxieties and contributed to Reagan's landslide in 1980.</p><div class="theme-evidence"><strong>Evidence:</strong> Truman Doctrine · Marshall Plan · Korean War · Cuban Missile Crisis · Gulf of Tonkin · Tet Offensive · Nixon's détente · War Powers Act · SALT treaties</div></div></div>
+    <div class="theme-card"><div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">P</div><div class="theme-card-title-wrap"><div class="theme-card-name">Politics &amp; Power (PCE)</div><div class="theme-card-code">Liberal consensus, Great Society, and its collapse</div></div><span class="theme-card-chevron">▼</span></div><div class="theme-card-body"><p>The postwar "liberal consensus" — bipartisan agreement on containment abroad and New Deal capitalism at home — reached its peak with Johnson's Great Society but was fatally wounded by Vietnam and Watergate. The <strong>Great Society</strong> (Medicare, Medicaid, federal education funding, immigration reform, War on Poverty) represented liberalism's highest achievement — and generated the conservative backlash that would produce Reagan's revolution. Nixon's "Southern Strategy" deliberately appealed to white southern resentment of civil rights gains, realigning the South from Democratic to Republican and reshaping American politics for decades.</p><div class="theme-evidence"><strong>Evidence:</strong> Great Society programs · Nixon's Southern Strategy · Watergate · War Powers Act · Election of 1968 · Roe v. Wade (1973) · stagflation · OPEC oil crisis</div></div></div>
+
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">Historical Thinking Skill</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Skill Spotlight: CCOT</h2>
+    <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:1rem;font-style:italic"><strong>Prompt:</strong> Analyze continuities and changes in the African American freedom struggle from 1945 to 1980.</p>
+    <div class="ccot-grid">
+      <div class="ccot-box continuity"><div class="ccot-box-label">Continuity</div><div class="ccot-box-title">What Persisted?</div><ul><li>Systemic racial inequality and white resistance to Black advancement persisted throughout</li><li>Federal government's response remained incomplete — legislation was passed but enforcement was weak</li><li>Black Americans continued to face economic inequality even after legal victories</li></ul></div>
+      <div class="ccot-box change"><div class="ccot-box-label">Change</div><div class="ccot-box-title">What Changed &amp; When?</div><ul><li><strong>(1954)</strong> Brown dismantled "separate but equal" as constitutional doctrine</li><li><strong>(1955–65)</strong> Nonviolent direct action produced legislative victories (CRA, VRA)</li><li><strong>(1965–68)</strong> Black Power challenged integration as the movement's sole goal</li><li><strong>(1970s)</strong> Affirmative action and busing debates shifted the terrain of racial politics</li></ul></div>
+    </div>
+    <div class="ccot-thesis-box"><div class="ccot-thesis-label">Model Thesis</div><p class="ccot-thesis-text">"While the civil rights movement achieved landmark legal victories — dismantling the constitutional foundations of Jim Crow through Brown v. Board and the Civil Rights and Voting Rights Acts — the persistence of economic inequality, residential segregation, and white political backlash throughout 1945–1980 demonstrated that legal equality and substantive equality remained fundamentally different achievements, as the movement shifted from legal integration to economic justice without comparable success."</p></div>
+
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">Primary Source Practice</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">HIPP Analysis: MLK, "Letter from Birmingham Jail" (1963)</h2>
+    <div class="source-excerpt"><p class="source-excerpt-text">"We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed. Frankly, I have yet to engage in a direct action campaign that was 'well timed' in the view of those who have not suffered unduly from the disease of segregation. For years now I have heard the word 'Wait!' It has almost always meant 'Never.' … One has not only a legal but a moral responsibility to obey just laws. Conversely, one has a moral responsibility to disobey unjust laws. I would agree with St. Augustine that 'an unjust law is no law at all.'"</p><div class="source-excerpt-attr">— Martin Luther King Jr., "Letter from Birmingham Jail," April 16, 1963 &nbsp;·&nbsp; Written in the margins of a newspaper, from jail</div></div>
+    <div class="callout callout-exam"><span class="callout-icon">📋</span><div><div class="callout-label">Document Context</div><div class="callout-body"><strong>Martin Luther King Jr.</strong> was arrested during the Birmingham campaign for violating a court injunction against marching. Eight white Alabama clergymen published an open letter calling the protests "unwise and untimely." King wrote his response in the margins of a newspaper smuggled into his cell, addressing not just those clergymen but the moderate white America that demanded patience — the audience the movement most needed to persuade.</div></div></div>
+    <div class="card card-gold-top"><h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:1.2rem">Complete Your HIPP Analysis</h3>
+      <div class="hipp-grid">
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">H</div><div class="hipp-name">Historical Context</div></div><div class="hipp-box-prompt">What was the state of the civil rights movement in April 1963? Why was Birmingham chosen as the campaign site?</div><textarea class="hipp-textarea" placeholder="Consider: Bull Connor's reputation for violence, the SCLC's strategic need for a dramatic confrontation that would force federal action, the Kennedy administration's reluctance to commit to civil rights legislation, and the global Cold War context where American racial apartheid undermined U.S. credibility..."></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">I</div><div class="hipp-name">Intended Audience</div></div><div class="hipp-box-prompt">King was ostensibly writing to eight clergymen — who was he really addressing, and why?</div><textarea class="hipp-textarea" placeholder="Consider: The 'white moderate' who 'prefers a negative peace which is the absence of tension to a positive peace which is the presence of justice' — this is King's real target. Who are these moderates? Why are they more dangerous to the movement than the outright racist?"></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">P</div><div class="hipp-name">Purpose</div></div><div class="hipp-box-prompt">What does King want to accomplish? How does his argument about just vs. unjust laws serve the movement's goals?</div><textarea class="hipp-textarea" placeholder="Consider: King wants to delegitimize the 'wait' argument and justify civil disobedience philosophically. His citation of Augustine, Aquinas, and natural law theory grounds the movement in Western moral tradition — making it impossible for white Christians to reject without rejecting their own intellectual heritage."></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">P</div><div class="hipp-name">Point of View</div></div><div class="hipp-box-prompt">How does King's identity as a Black Baptist minister and PhD in theology shape the Letter's rhetorical strategy?</div><textarea class="hipp-textarea" placeholder="Consider: King speaks simultaneously as a Black man experiencing segregation and as a theologian fluent in the white intellectual and religious tradition. How does his ability to argue within the oppressor's philosophical framework give his demands moral authority that white moderates cannot easily dismiss?"></textarea></div>
+      </div>
+      <div class="hipp-actions"><button class="btn btn-primary" onclick="checkHIPP()">Review My Analysis</button><button class="btn btn-secondary" onclick="clearHIPP()">Clear</button><span id="hipp-feedback" style="font-size:0.9rem;font-style:italic"></span></div>
+    </div>
+  </main>
+
+  <aside class="side-col">
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">Navigate Periods</div></div><div class="sidebar-card-body"><div class="period-nav-strip"><a href="period-1.html" class="period-nav-chip">P1</a><a href="period-2.html" class="period-nav-chip">P2</a><a href="period-3.html" class="period-nav-chip">P3</a><a href="period-4.html" class="period-nav-chip">P4</a><a href="period-5.html" class="period-nav-chip">P5</a><a href="period-6.html" class="period-nav-chip">P6</a><a href="period-7.html" class="period-nav-chip">P7</a><a href="period-8.html" class="period-nav-chip active">P8</a><a href="period-9.html" class="period-nav-chip">P9</a></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">CB Key Concepts</div><div class="sidebar-card-subtitle">Period 8 · 1945–1980</div></div><div class="sidebar-card-body"><div class="key-concept-item"><div class="key-concept-num">Key Concept 8.1</div><div class="key-concept-text">The U.S. responded to an uncertain and unstable postwar world by asserting and working to maintain a position of global leadership, with far-reaching domestic and international consequences.</div></div><div class="key-concept-item"><div class="key-concept-num">Key Concept 8.2</div><div class="key-concept-text">New movements for civil rights and liberal efforts to expand government generated a range of political and cultural responses.</div></div><div class="key-concept-item"><div class="key-concept-num">Key Concept 8.3</div><div class="key-concept-text">Postwar economic and demographic changes had far-reaching consequences for American society, politics, and culture.</div></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">Key Terms</div><div class="sidebar-card-subtitle">Period 8 Must-Know</div></div><div class="sidebar-card-body"><div class="key-term"><span class="key-term-word">Containment</span><span class="key-term-def">George Kennan's strategy of preventing Soviet expansion through political, economic, and military pressure — the guiding doctrine of Cold War foreign policy for 40 years.</span></div><div class="key-term"><span class="key-term-word">McCarthyism</span><span class="key-term-def">Joseph McCarthy's reckless anti-Communist crusade (1950–54) — destroyed careers through accusations without evidence, chilling civil liberties and free speech.</span></div><div class="key-term"><span class="key-term-word">Brown v. Board (1954)</span><span class="key-term-def">Unanimous ruling that "separate but equal" was inherently unequal — overturned Plessy v. Ferguson and launched the constitutional civil rights revolution.</span></div><div class="key-term"><span class="key-term-word">Great Society</span><span class="key-term-def">LBJ's domestic program — Medicare, Medicaid, Voting Rights Act, federal education funding, War on Poverty — the largest expansion of federal programs since the New Deal.</span></div><div class="key-term"><span class="key-term-word">Tet Offensive (1968)</span><span class="key-term-def">North Vietnamese surprise attack during the lunar new year — militarily repelled, but shattered American public confidence in the war's progress, turning public opinion against Vietnam.</span></div><div class="key-term"><span class="key-term-word">Southern Strategy</span><span class="key-term-def">Nixon's deliberate appeal to white southern resentment of civil rights to win elections — completed the South's realignment from Democratic to Republican, reshaping American politics.</span></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header crimson"><div class="sidebar-card-title">Exam Quick Tips</div></div><div class="sidebar-card-body"><div class="key-term"><span class="key-term-word accent">Know CRA vs. VRA</span><span class="key-term-def">Civil Rights Act (1964) = banned discrimination in public accommodations and employment. Voting Rights Act (1965) = eliminated literacy tests and other voter suppression. Know both and their specific provisions.</span></div><div class="key-term"><span class="key-term-word accent">Vietnam Caused Liberal Collapse</span><span class="key-term-def">Connect Vietnam directly to the end of the liberal consensus: spending on the war prevented Great Society funding, the credibility gap destroyed public trust, and the antiwar movement fractured the Democratic coalition.</span></div><div class="key-term"><span class="key-term-word accent">Watergate = Distrust Legacy</span><span class="key-term-def">Nixon's resignation produced lasting public distrust of government that fueled Reagan's "government is the problem" conservatism. Connect Watergate to Period 9's conservative ascendancy.</span></div></div></div>
+  </aside>
+</div>
+<footer><div class="footer-brand">APUSH Scholar</div><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="period-7.html">Period 7</a></li><li><a href="period-9.html">Period 9</a></li></ul><p class="footer-text">Educational resource aligned with College Board APUSH CED. Not affiliated with the College Board.</p></footer>
+<script>
+/**
+ * APUSH SCHOLAR — Interactive Timeline Component
+ * Usage:
+ *   new APUSHTimeline('container-id', eventsArray).render();
+ *
+ * Event object shape:
+ * {
+ *   year: "1765",
+ *   event: "Stamp Act",
+ *   summary: "Brief 1-2 sentence description.",
+ *   magpies: { code: "PCE", label: "Politics & Power" },
+ *   causation: "One sentence on cause or effect."
+ * }
+ */
+
+(function (global) {
+  'use strict';
+
+  const THEME_MAP = {
+    MIG: { bg: '#0d9488', light: 'rgba(13,148,136,0.15)', border: 'rgba(13,148,136,0.4)',  label: 'Migration & Settlement'  },
+    WOR: { bg: '#2563eb', light: 'rgba(37,99,235,0.15)',  border: 'rgba(37,99,235,0.4)',   label: 'America in the World'    },
+    GEO: { bg: '#16a34a', light: 'rgba(22,163,74,0.15)',  border: 'rgba(22,163,74,0.4)',   label: 'Geography & Environment' },
+    PCE: { bg: '#9b2335', light: 'rgba(155,35,53,0.15)',  border: 'rgba(155,35,53,0.4)',   label: 'Politics & Power'        },
+    NAT: { bg: '#7c3aed', light: 'rgba(124,58,237,0.15)', border: 'rgba(124,58,237,0.4)',  label: 'American Identity'       },
+    WXT: { bg: '#d97706', light: 'rgba(217,119,6,0.15)',  border: 'rgba(217,119,6,0.4)',   label: 'Economy & Technology'    },
+    SOC: { bg: '#db2777', light: 'rgba(219,39,119,0.15)', border: 'rgba(219,39,119,0.4)',  label: 'Social Structures'       },
+  };
+
+  class APUSHTimeline {
+    constructor(containerId, events) {
+      this.containerId = containerId;
+      this.container   = document.getElementById(containerId);
+      this.events      = events || [];
+      this.activeIndex = null;
+      this._isDragging = false;
+      this._startX     = 0;
+      this._scrollLeft = 0;
+    }
+
+    render() {
+      if (!this.container) return console.warn('APUSHTimeline: container not found:', this.containerId);
+      this.container.innerHTML = '';
+      this.container.className = 'apush-timeline-wrap';
+
+      // Scroll track
+      const scrollEl = document.createElement('div');
+      scrollEl.className = 'tl-scroll';
+
+      const track = document.createElement('div');
+      track.className = 'tl-track';
+
+      this.events.forEach((evt, i) => {
+        const theme = THEME_MAP[evt.magpies?.code] || THEME_MAP.PCE;
+        const node  = document.createElement('div');
+        node.className   = 'tl-node';
+        node.tabIndex    = 0;
+        node.setAttribute('role', 'button');
+        node.setAttribute('aria-label', `${evt.year}: ${evt.event}`);
+        node.dataset.index = i;
+        node.innerHTML = `
+          <div class="tl-node-year">${evt.year}</div>
+          <div class="tl-node-dot" style="border-color:${theme.border}">
+            <div class="tl-node-dot-inner" style="background:${theme.bg}"></div>
+          </div>
+          <div class="tl-node-label">${evt.event}</div>
+        `;
+        node.addEventListener('click',   () => this._selectEvent(i));
+        node.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this._selectEvent(i); } });
+        track.appendChild(node);
+      });
+
+      scrollEl.appendChild(track);
+      this._initDragScroll(scrollEl);
+
+      // Detail panel
+      const detailWrap = document.createElement('div');
+      detailWrap.className = 'tl-detail';
+      detailWrap.id = `tl-detail-${this.containerId}`;
+      detailWrap.innerHTML = `<p class="tl-placeholder">↑ Click any event node above to explore its historical details</p>`;
+
+      this.container.appendChild(scrollEl);
+      this.container.appendChild(detailWrap);
+      this._detailEl = detailWrap;
+      this._trackEl  = track;
+    }
+
+    _selectEvent(index) {
+      const nodes = this._trackEl.querySelectorAll('.tl-node');
+
+      // Toggle off if same node clicked
+      if (this.activeIndex === index) {
+        nodes[index].classList.remove('active');
+        this._closeDetail();
+        return;
+      }
+
+      // Activate node
+      nodes.forEach(n => n.classList.remove('active'));
+      nodes[index].classList.add('active');
+      this.activeIndex = index;
+
+      const evt   = this.events[index];
+      const theme = THEME_MAP[evt.magpies?.code] || THEME_MAP.PCE;
+      const label = evt.magpies?.label || theme.label;
+
+      this._detailEl.innerHTML = `
+        <div class="tl-detail-inner" style="border-left-color:${theme.bg}">
+          <div class="tl-detail-left">
+            <div class="tl-detail-year" style="color:${theme.bg}">${evt.year}</div>
+            <span class="tl-detail-badge" style="background:${theme.light};color:${theme.bg};border:1px solid ${theme.border}">
+              ${evt.magpies?.code} · ${label}
+            </span>
+          </div>
+          <div class="tl-detail-right">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+              <h3 class="tl-detail-name">${evt.event}</h3>
+              <button class="tl-detail-close" aria-label="Close">✕</button>
+            </div>
+            <p class="tl-detail-summary">${evt.summary}</p>
+            <div class="tl-detail-causation">
+              <span class="tl-detail-causation-label">⟶ Causation</span>
+              <p>${evt.causation}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Open with animation
+      this._detailEl.classList.add('open');
+
+      // Wire close button
+      this._detailEl.querySelector('.tl-detail-close').addEventListener('click', () => {
+        nodes.forEach(n => n.classList.remove('active'));
+        this._closeDetail();
+      });
+
+      // Scroll node into view within its scroll container
+      const nodeEl = nodes[index];
+      const scrollEl = nodeEl.closest('.tl-scroll');
+      if (scrollEl) {
+        const nodeLeft = nodeEl.offsetLeft - scrollEl.offsetLeft;
+        const center = nodeLeft - (scrollEl.clientWidth / 2) + (nodeEl.offsetWidth / 2);
+        scrollEl.scrollTo({ left: center, behavior: 'smooth' });
+      }
+    }
+
+    _closeDetail() {
+      this._detailEl.classList.remove('open');
+      this.activeIndex = null;
+      setTimeout(() => {
+        if (!this._detailEl.classList.contains('open')) {
+          this._detailEl.innerHTML = `<p class="tl-placeholder">↑ Click any event node above to explore its historical details</p>`;
+        }
+      }, 380);
+    }
+
+    _initDragScroll(el) {
+      el.addEventListener('mousedown', (e) => {
+        this._isDragging = true;
+        this._startX    = e.pageX - el.offsetLeft;
+        this._scrollLeft = el.scrollLeft;
+        el.style.userSelect = 'none';
+      });
+      el.addEventListener('mouseleave', () => { this._isDragging = false; el.style.userSelect = ''; });
+      el.addEventListener('mouseup',    () => { this._isDragging = false; el.style.userSelect = ''; });
+      el.addEventListener('mousemove',  (e) => {
+        if (!this._isDragging) return;
+        e.preventDefault();
+        const x    = e.pageX - el.offsetLeft;
+        const walk = (x - this._startX) * 1.5;
+        el.scrollLeft = this._scrollLeft - walk;
+      });
+    }
+  }
+
+  // Shared accordion helper — used by all period pages
+  global.toggleTheme = function(header) {
+    header.parentElement.classList.toggle('open');
+  };
+
+  // Shared thesis builder
+  global.buildThesis = function() {
+    const claim   = document.getElementById('t-claim')?.value.trim()  || '';
+    const reason  = document.getElementById('t-reason')?.value.trim() || '';
+    const nuance  = document.getElementById('t-nuance')?.value.trim() || '';
+    const preview = document.getElementById('thesis-preview');
+    if (!preview) return;
+    if (!claim && !reason && !nuance) {
+      preview.textContent = 'Your thesis will appear here as you type above…';
+      preview.style.color = 'rgba(255,255,255,0.4)';
+      return;
+    }
+    let t = claim;
+    if (reason) t += (t ? ', ' : '') + reason;
+    if (nuance)  t += (t ? ', ' : '') + nuance;
+    if (t && !t.endsWith('.')) t += '.';
+    preview.textContent = t;
+    preview.style.color = 'rgba(255,255,255,0.88)';
+  };
+
+  // Shared HIPP checker
+  global.checkHIPP = function() {
+    const boxes    = document.querySelectorAll('.hipp-textarea');
+    const feedback = document.getElementById('hipp-feedback');
+    if (!feedback) return;
+    let filled = 0;
+    boxes.forEach(b => { if (b.value.trim().length > 20) filled++; });
+    if (filled === 4) {
+      feedback.textContent = '✓ All four sections completed. Review your responses against the document context.';
+      feedback.style.color = '#2a7a2a';
+    } else if (filled > 0) {
+      feedback.textContent = `${filled}/4 sections completed. Make sure each response cites specific evidence.`;
+      feedback.style.color = '#7a6010';
+    } else {
+      feedback.textContent = 'Complete at least one section before reviewing.';
+      feedback.style.color = '#8b1f2f';
+    }
+  };
+
+  global.clearHIPP = function() {
+    document.querySelectorAll('.hipp-textarea').forEach(t => t.value = '');
+    const fb = document.getElementById('hipp-feedback');
+    if (fb) fb.textContent = '';
+  };
+
+  // Scroll-triggered fade-in for cards
+  global.initScrollAnimations = function() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity  = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.sidebar-card, .card, .theme-card, .callout').forEach(el => {
+      el.style.opacity   = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+  };
+
+  global.APUSHTimeline = APUSHTimeline;
+
+})(window);
+
+</script>
+<script>
+const TIMELINE_EVENTS=[
+  {year:"1947",event:"Truman Doctrine & Containment",summary:"President Truman declared American commitment to resisting Soviet expansion anywhere in the world, establishing the containment doctrine that would guide U.S. Cold War foreign policy for forty years.",magpies:{code:"WOR",label:"America in the World"},causation:"The Soviet Union's post-WWII expansion into Eastern Europe and pressure on Greece and Turkey convinced Truman that only an explicit American commitment to resist Communist expansion would deter further Soviet aggression."},
+  {year:"1950",event:"Korean War & McCarthyism",summary:"The Korean War demonstrated containment's military dimension — fighting to repel Communist expansion — while McCarthy's domestic crusade produced the Red Scare, destroying careers through accusations and chilling civil liberties.",magpies:{code:"WOR",label:"America in the World"},causation:"The Soviet atomic bomb (1949) and Communist victory in China shattered American security assumptions; the resulting anxiety made McCarthy's reckless accusations plausible to a frightened public desperate for explanations of apparent Communist advances."},
+  {year:"1954",event:"Brown v. Board of Education",summary:"Chief Justice Warren's unanimous ruling declared 'separate but equal' inherently unequal, overturning Plessy v. Ferguson and launching the constitutional civil rights revolution — the most significant Supreme Court ruling of the 20th century.",magpies:{code:"PCE",label:"Politics & Power"},causation:"NAACP lawyer Thurgood Marshall's litigation strategy, combined with social science evidence that segregation caused psychological harm to Black children, persuaded a unanimous Court; the Southern Manifesto (1956) and 'massive resistance' demonstrated the depth of white opposition."},
+  {year:"1963",event:"Birmingham & the Civil Rights Crisis",summary:"Bull Connor's fire hoses and police dogs attacking peaceful demonstrators in Birmingham shocked the nation and world, forcing Kennedy to publicly commit to civil rights legislation and exposing the moral bankruptcy of legal segregation.",magpies:{code:"SOC",label:"Social Structures"},causation:"SCLC strategically chose Birmingham for its notoriously violent commissioner of public safety; the televised brutality transformed northern white public opinion and directly produced Kennedy's June 1963 civil rights speech and draft legislation."},
+  {year:"1964",event:"Civil Rights Act & Great Society",summary:"LBJ used Kennedy's assassination and his congressional mastery to pass the Civil Rights Act of 1964 and Voting Rights Act of 1965 — the most significant civil rights legislation since Reconstruction — alongside Medicare, Medicaid, and the War on Poverty.",magpies:{code:"PCE",label:"Politics & Power"},causation:"The civil rights movement's pressure combined with Johnson's legislative genius and the political momentum from Kennedy's assassination; the Great Society's ambitions were ultimately undermined by Vietnam's escalating costs."},
+  {year:"1968",event:"Tet Offensive & Year of Crisis",summary:"The Viet Cong's surprise Tet Offensive shattered official optimism about Vietnam; combined with the assassinations of MLK and RFK, urban riots, and the chaotic Democratic convention, 1968 represented the liberal consensus's collapse.",magpies:{code:"WOR",label:"America in the World"},causation:"The credibility gap between official claims of progress and the Tet Offensive's reality permanently turned public opinion against the war; Nixon's 1968 victory on a 'secret plan to end the war' and his Southern Strategy completed the political realignment Tet had accelerated."},
+  {year:"1974",event:"Watergate & Nixon's Resignation",summary:"The unraveling of Nixon's Watergate cover-up through Senate hearings and White House tape recordings produced the first presidential resignation in American history — a constitutional triumph that nonetheless inflicted lasting wounds on public trust in government.",magpies:{code:"PCE",label:"Politics & Power"},causation:"Nixon's criminal cover-up of a political break-in, combined with the Saturday Night Massacre and White House tape revelations, made impeachment inevitable; the resulting distrust of government directly fueled the anti-government conservatism that Reagan would mobilize in 1980."}
+];
+new APUSHTimeline('period-timeline',TIMELINE_EVENTS).render();
+initScrollAnimations();
+</script>
+</body>
+</html>

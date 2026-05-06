@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Period 1: 1491–1607 — APUSH Scholar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+/* ═══════════════════════════════════════════════
+   APUSH SCHOLAR — SHARED STYLESHEET
+   Used by all period pages + themes.html + skills.html
+════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:          #0f1b2d;
+  --navy-mid:      #1a2e48;
+  --navy-light:    #243d5c;
+  --gold:          #c8993a;
+  --gold-light:    #e8c36a;
+  --gold-pale:     #f5ecd4;
+  --parchment:     #f7f1e3;
+  --parchment-dark:#ede4cc;
+  --crimson:       #8b1f2f;
+  --crimson-light: #b8283c;
+  --text-dark:     #1c1c1c;
+  --text-mid:      #3a3a3a;
+  --text-muted:    #6b6b6b;
+  --white:         #ffffff;
+  --sidebar-w:     280px;
+  /* MAGPIES theme colors */
+  --mig:  #0d9488;
+  --wor:  #2563eb;
+  --geo:  #16a34a;
+  --pce:  #8b1f2f;
+  --nat:  #7c3aed;
+  --wxt:  #d97706;
+  --soc:  #db2777;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--parchment);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(15,27,45,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,153,58,0.25);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.nav-brand-star {
+  width: 28px; height: 28px; background: var(--gold);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.nav-brand-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--white); }
+.nav-brand-text span { color:var(--gold); }
+.nav-links { display:flex; align-items:center; gap:0.25rem; list-style:none; }
+.nav-links a {
+  display:block; padding:0.4rem 0.8rem; color:rgba(255,255,255,0.7);
+  text-decoration:none; font-size:0.88rem; border-radius:4px;
+  transition:color 0.2s,background 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--gold); background:rgba(200,153,58,0.1); }
+.nav-links .nav-cta a { background:var(--crimson); color:var(--white); }
+.nav-links .nav-cta a:hover { background:var(--crimson-light); }
+@media(max-width:640px){ .nav-links { display:none; } }
+
+/* ── PERIOD HERO ── */
+.period-hero {
+  background: var(--navy);
+  padding: 6rem 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+.period-hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(200,153,58,0.1) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 80% at 15% 30%, rgba(139,31,47,0.15) 0%, transparent 65%);
+}
+.period-hero-inner {
+  position:relative; z-index:1; max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end;
+}
+.breadcrumb {
+  font-family:'JetBrains Mono',monospace; font-size:0.68rem;
+  letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem;
+  display:flex; align-items:center; gap:0.5rem;
+}
+.breadcrumb a { color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.2s; }
+.breadcrumb a:hover { color:var(--gold); }
+.breadcrumb-sep { color:rgba(255,255,255,0.25); }
+.period-eyebrow {
+  font-family:'JetBrains Mono',monospace; font-size:0.7rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:rgba(255,255,255,0.45); margin-bottom:0.5rem;
+}
+.period-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3.8rem); font-weight:900;
+  color:var(--white); line-height:1.05; margin-bottom:0.4rem;
+}
+.period-subtitle {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.1rem,2vw,1.5rem);
+  font-weight:400; font-style:italic;
+  color:var(--gold); margin-bottom:1.5rem;
+}
+.period-context { font-size:1.08rem; color:rgba(255,255,255,0.72); max-width:700px; line-height:1.8; }
+.period-meta { display:flex; flex-direction:column; align-items:flex-end; gap:1rem; }
+.period-badge-big {
+  background:var(--gold); color:var(--navy);
+  font-family:'Playfair Display',serif; font-size:3rem; font-weight:900;
+  width:90px; height:90px; display:flex; align-items:center; justify-content:center; border-radius:4px;
+}
+.period-exam-pct { text-align:right; }
+.period-exam-pct-num { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--gold); display:block; }
+.period-exam-pct-label { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; color:rgba(255,255,255,0.4); text-transform:uppercase; }
+@media(max-width:768px){ .period-hero-inner { grid-template-columns:1fr; } .period-meta { align-items:flex-start; flex-direction:row; } }
+
+/* ── TIMELINE SECTION ── */
+.timeline-section {
+  background: var(--navy-mid);
+  padding: 2.5rem 2rem;
+  border-bottom: 2px solid rgba(200,153,58,0.2);
+}
+.timeline-section-inner { max-width:1100px; margin:0 auto; }
+.timeline-section-header {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;
+}
+.timeline-section-tag {
+  font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+}
+.timeline-section-line { flex:1; height:1px; background:rgba(200,153,58,0.25); }
+
+/* Timeline rendered by timeline.js */
+.apush-timeline-wrap { position:relative; }
+.tl-scroll {
+  overflow-x:auto; overflow-y:visible;
+  padding:2.5rem 1rem 1rem;
+  cursor:grab;
+  scrollbar-width:thin; scrollbar-color:rgba(200,153,58,0.4) transparent;
+}
+.tl-scroll:active { cursor:grabbing; }
+.tl-scroll::-webkit-scrollbar { height:4px; }
+.tl-scroll::-webkit-scrollbar-track { background:transparent; }
+.tl-scroll::-webkit-scrollbar-thumb { background:rgba(200,153,58,0.35); border-radius:2px; }
+.tl-track {
+  display:flex; align-items:flex-end;
+  min-width:max-content;
+  padding-bottom:2.5rem;
+  gap:0;
+  position:relative;
+}
+.tl-track::after {
+  content:''; position:absolute;
+  left:0; right:0; bottom:calc(2.5rem + 14px);
+  height:2px; background:rgba(200,153,58,0.3);
+  z-index:0;
+}
+.tl-node {
+  display:flex; flex-direction:column; align-items:center;
+  width:160px; flex-shrink:0;
+  position:relative; z-index:1;
+  cursor:pointer;
+  padding:0 8px;
+  transition:transform 0.2s;
+}
+.tl-node:hover { transform:translateY(-3px); }
+.tl-node-year {
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+  color:rgba(255,255,255,0.5); margin-bottom:0.5rem;
+  letter-spacing:0.08em; transition:color 0.2s;
+}
+.tl-node-dot {
+  width:28px; height:28px; border-radius:50%;
+  border:2.5px solid rgba(200,153,58,0.4);
+  background:var(--navy-mid);
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-bottom:0.6rem;
+}
+.tl-node-dot-inner {
+  width:10px; height:10px; border-radius:50%;
+  background:rgba(200,153,58,0.5);
+  transition:background 0.2s, transform 0.2s;
+}
+.tl-node-label {
+  font-size:0.78rem; color:rgba(255,255,255,0.65);
+  text-align:center; line-height:1.3;
+  max-width:140px; transition:color 0.2s;
+}
+/* Active node state */
+.tl-node.active .tl-node-year { color:var(--gold-light); }
+.tl-node.active .tl-node-dot { border-color:var(--gold); transform:scale(1.2); box-shadow:0 0 16px rgba(200,153,58,0.4); }
+.tl-node.active .tl-node-dot-inner { background:var(--gold); transform:scale(1.1); }
+.tl-node.active .tl-node-label { color:var(--white); font-weight:600; }
+
+/* Detail Panel */
+.tl-detail {
+  max-width:1100px; margin:0 auto;
+  overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease;
+  max-height:0; opacity:0;
+}
+.tl-detail.open { max-height:400px; opacity:1; }
+.tl-detail-inner {
+  background:rgba(255,255,255,0.05);
+  border-radius:0 0 8px 8px;
+  border:1px solid rgba(200,153,58,0.25);
+  border-top:none;
+  padding:1.5rem 2rem;
+  display:grid; grid-template-columns:auto 1fr; gap:1.2rem;
+  align-items:start;
+  border-left:4px solid var(--gold);
+}
+.tl-detail-left { display:flex; flex-direction:column; gap:0.6rem; align-items:flex-start; }
+.tl-detail-year {
+  font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900;
+  color:var(--gold); line-height:1;
+}
+.tl-detail-badge {
+  display:inline-block; padding:0.25rem 0.65rem;
+  border-radius:3px; font-family:'JetBrains Mono',monospace;
+  font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase;
+  font-weight:500;
+}
+.tl-detail-right { }
+.tl-detail-name {
+  font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700;
+  color:var(--white); margin-bottom:0.4rem;
+}
+.tl-detail-summary {
+  font-size:0.97rem; color:rgba(255,255,255,0.75); line-height:1.7; margin-bottom:0.8rem;
+}
+.tl-detail-causation {
+  display:flex; gap:0.6rem; align-items:flex-start;
+  background:rgba(255,255,255,0.04); border-radius:4px; padding:0.65rem 0.9rem;
+}
+.tl-detail-causation-label {
+  font-family:'JetBrains Mono',monospace; font-size:0.62rem;
+  color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;
+  flex-shrink:0; margin-top:0.2rem;
+}
+.tl-detail-causation p { font-size:0.9rem; color:rgba(255,255,255,0.65); line-height:1.6; }
+.tl-detail-close {
+  background:none; border:none; cursor:pointer;
+  color:rgba(255,255,255,0.4); font-size:1rem;
+  padding:0.2rem; margin-left:auto;
+  transition:color 0.2s;
+}
+.tl-detail-close:hover { color:var(--gold); }
+.tl-placeholder {
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem;
+  color:rgba(255,255,255,0.3); letter-spacing:0.1em;
+  padding:1rem 2rem; text-align:center;
+}
+@media(max-width:768px){
+  .tl-node { width:120px; }
+  .tl-detail-inner { grid-template-columns:1fr; }
+}
+
+/* ── CONTENT WRAPPER ── */
+.content-wrapper {
+  max-width:1100px; margin:0 auto; padding:3rem 2rem;
+  display:grid; grid-template-columns:1fr var(--sidebar-w); gap:2.5rem; align-items:start;
+}
+.main-col { min-width:0; }
+.side-col { min-width:0; }
+@media(max-width:768px){
+  .content-wrapper { grid-template-columns:1fr; }
+  .side-col { order:-1; }
+}
+
+/* ── SECTION HEADERS ── */
+.section-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.section-header-line { flex:1; height:1px; background:linear-gradient(to right,rgba(200,153,58,0.5),transparent); }
+.section-tag { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--crimson); white-space:nowrap; }
+.section-title { font-family:'Playfair Display',serif; font-size:1.65rem; font-weight:700; color:var(--navy); margin-bottom:1rem; }
+
+/* ── CARDS ── */
+.card { background:var(--white); border-radius:6px; padding:1.8rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); margin-bottom:2rem; }
+.card-gold-top { border-top:3px solid var(--gold); }
+.card-navy-top { border-top:3px solid var(--navy); }
+.card-crimson-top { border-top:3px solid var(--crimson); }
+
+/* ── EVENTS LIST ── */
+.events-list { list-style:none; }
+.event-item { display:grid; grid-template-columns:60px 1fr; gap:1rem; padding:0.85rem 0; border-bottom:1px solid rgba(0,0,0,0.07); align-items:start; }
+.event-item:last-child { border-bottom:none; }
+.event-year-badge { background:var(--navy); color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:0.7rem; padding:0.3rem 0.4rem; border-radius:3px; text-align:center; line-height:1.3; }
+.event-title { font-weight:600; color:var(--navy); font-size:1rem; margin-bottom:0.2rem; }
+.event-desc { font-size:0.9rem; color:var(--text-muted); line-height:1.55; }
+.event-themes { display:flex; gap:0.35rem; flex-wrap:wrap; margin-top:0.4rem; }
+.theme-pill { font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.08em; padding:0.15rem 0.4rem; border-radius:2px; background:rgba(200,153,58,0.15); color:var(--gold); border:1px solid rgba(200,153,58,0.3); text-transform:uppercase; }
+
+/* ── THEME ACCORDION ── */
+.theme-card { background:var(--white); border-radius:6px; overflow:hidden; margin-bottom:1.2rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); }
+.theme-card-header { display:flex; align-items:center; gap:1rem; padding:1.1rem 1.4rem; cursor:pointer; user-select:none; transition:background 0.2s; }
+.theme-card-header:hover { background:rgba(0,0,0,0.015); }
+.theme-letter { width:40px; height:40px; border-radius:4px; background:var(--navy); color:var(--gold); font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.theme-card-title-wrap { flex:1; }
+.theme-card-name { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--navy); }
+.theme-card-code { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--gold); text-transform:uppercase; }
+.theme-card-chevron { color:var(--text-muted); font-size:0.8rem; transition:transform 0.25s; }
+.theme-card.open .theme-card-chevron { transform:rotate(180deg); }
+.theme-card-body { display:none; padding:0 1.4rem 1.4rem; border-top:1px solid rgba(0,0,0,0.06); }
+.theme-card.open .theme-card-body { display:block; }
+.theme-card-body p { font-size:0.97rem; color:var(--text-mid); line-height:1.7; margin-bottom:0.8rem; }
+.theme-card-body p:first-child { margin-top:1rem; }
+.theme-evidence { background:var(--parchment); border-radius:4px; padding:0.8rem 1rem; font-size:0.88rem; color:var(--text-mid); }
+.theme-evidence strong { color:var(--navy); }
+
+/* ── CCOT ── */
+.ccot-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.2rem 0; }
+.ccot-box { border-radius:6px; padding:1.3rem; }
+.ccot-box.continuity { background:rgba(15,27,45,0.05); border:1px solid rgba(15,27,45,0.12); }
+.ccot-box.change { background:rgba(139,31,47,0.05); border:1px solid rgba(139,31,47,0.15); }
+.ccot-box-label { font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem; }
+.ccot-box.continuity .ccot-box-label { color:var(--navy); }
+.ccot-box.change .ccot-box-label { color:var(--crimson); }
+.ccot-box-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:0.6rem; color:var(--navy); }
+.ccot-box ul { list-style:none; font-size:0.9rem; color:var(--text-mid); }
+.ccot-box ul li { padding:0.3rem 0; padding-left:1rem; position:relative; border-bottom:1px solid rgba(0,0,0,0.05); line-height:1.5; }
+.ccot-box ul li:last-child { border-bottom:none; }
+.ccot-box.continuity ul li::before { content:'='; position:absolute; left:0; color:var(--navy); font-weight:700; }
+.ccot-box.change ul li::before { content:'→'; position:absolute; left:0; color:var(--crimson); font-weight:700; }
+.ccot-thesis-box { background:var(--navy); border-radius:6px; padding:1.4rem; margin-top:1.2rem; }
+.ccot-thesis-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+.ccot-thesis-text { font-size:1rem; color:rgba(255,255,255,0.85); font-style:italic; line-height:1.75; }
+@media(max-width:600px){ .ccot-grid { grid-template-columns:1fr; } }
+
+/* ── PRIMARY SOURCE ── */
+.source-excerpt { background:var(--navy); border-radius:6px; padding:2rem; margin-bottom:1.5rem; position:relative; }
+.source-excerpt::before { content:'C'; position:absolute; top:-0.5rem; left:1.2rem; font-family:'Playfair Display',serif; font-size:5rem; color:var(--gold); opacity:0.25; line-height:1; }
+.source-excerpt-text { font-size:1.1rem; color:rgba(255,255,255,0.88); font-style:italic; line-height:1.9; position:relative; z-index:1; }
+.source-excerpt-attr { margin-top:1.2rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; color:var(--gold); }
+
+/* ── HIPP ── */
+.hipp-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.hipp-box { background:var(--white); border-radius:6px; border:1px solid rgba(0,0,0,0.1); overflow:hidden; }
+.hipp-box-header { background:var(--navy-mid); padding:0.7rem 1rem; display:flex; align-items:center; gap:0.6rem; }
+.hipp-letter { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; color:var(--gold); line-height:1; }
+.hipp-name { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; color:var(--white); }
+.hipp-box-prompt { padding:0.8rem 1rem 0.5rem; font-size:0.82rem; color:var(--text-muted); font-style:italic; border-bottom:1px solid rgba(0,0,0,0.07); }
+.hipp-textarea { width:100%; border:none; outline:none; padding:0.8rem 1rem; font-family:'Crimson Pro',serif; font-size:0.95rem; color:var(--text-dark); background:transparent; resize:vertical; min-height:90px; line-height:1.6; }
+.hipp-textarea::placeholder { color:rgba(0,0,0,0.25); font-style:italic; }
+.hipp-actions { margin-top:1.2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+@media(max-width:600px){ .hipp-grid { grid-template-columns:1fr; } }
+
+/* ── CALLOUTS ── */
+.callout { border-radius:6px; padding:1.3rem 1.5rem; margin:1.5rem 0; display:flex; gap:1rem; align-items:flex-start; }
+.callout-exam { background:rgba(15,27,45,0.07); border-left:4px solid var(--navy); }
+.callout-warning { background:rgba(200,153,58,0.1); border-left:4px solid var(--gold); }
+.callout-tip { background:rgba(139,31,47,0.07); border-left:4px solid var(--crimson); }
+.callout-icon { font-size:1.2rem; flex-shrink:0; margin-top:0.1rem; }
+.callout-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.3rem; }
+.callout-exam .callout-label { color:var(--navy); }
+.callout-warning .callout-label { color:#7a6010; }
+.callout-tip .callout-label { color:var(--crimson); }
+.callout-body { font-size:0.95rem; color:var(--text-mid); line-height:1.65; }
+.callout-body strong { color:var(--navy); }
+
+/* ── BUTTONS ── */
+.btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.5rem; border-radius:4px; border:none; cursor:pointer; font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:700; letter-spacing:0.03em; transition:background 0.2s, transform 0.15s; }
+.btn-primary { background:var(--crimson); color:var(--white); }
+.btn-primary:hover { background:var(--crimson-light); transform:translateY(-1px); }
+.btn-secondary { background:transparent; color:var(--navy); border:1.5px solid var(--navy); }
+.btn-secondary:hover { background:var(--navy); color:var(--white); }
+
+/* ── SIDEBAR ── */
+.sidebar-card { background:var(--white); border-radius:6px; overflow:hidden; margin-bottom:1.5rem; box-shadow:0 1px 8px rgba(0,0,0,0.07); }
+.sidebar-card-header { background:var(--navy); padding:0.9rem 1.2rem; }
+.sidebar-card-header.crimson { background:var(--crimson); }
+.sidebar-card-title { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--white); }
+.sidebar-card-subtitle { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; }
+.sidebar-card-body { padding:1rem 1.2rem; }
+.key-term { padding:0.55rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+.key-term:last-child { border-bottom:none; }
+.key-term-word { font-weight:600; color:var(--navy); font-size:0.95rem; display:block; }
+.key-term-word.accent { color:var(--crimson); }
+.key-term-def { font-size:0.82rem; color:var(--text-muted); line-height:1.5; }
+.key-concept-item { padding:0.6rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+.key-concept-item:last-child { border-bottom:none; }
+.key-concept-num { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; color:var(--crimson); text-transform:uppercase; margin-bottom:0.2rem; }
+.key-concept-text { font-size:0.88rem; color:var(--text-mid); line-height:1.5; font-style:italic; }
+.mini-timeline { position:relative; padding-left:1.5rem; }
+.mini-timeline::before { content:''; position:absolute; left:5px; top:4px; bottom:4px; width:1px; background:linear-gradient(to bottom, var(--gold), rgba(200,153,58,0.2)); }
+.mini-tl-item { position:relative; padding-bottom:0.85rem; }
+.mini-tl-item:last-child { padding-bottom:0; }
+.mini-tl-dot { position:absolute; left:-1.5rem; width:10px; height:10px; background:var(--gold); border-radius:50%; top:4px; }
+.mini-tl-year { font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--gold); font-weight:500; margin-bottom:0.1rem; }
+.mini-tl-event { font-size:0.88rem; color:var(--text-mid); line-height:1.45; }
+.period-nav-strip { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.period-nav-chip { display:block; padding:0.3rem 0.6rem; background:var(--parchment); border:1px solid rgba(0,0,0,0.1); border-radius:3px; text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--text-muted); transition:background 0.2s, color 0.2s; }
+.period-nav-chip:hover { background:var(--navy); color:var(--gold); }
+.period-nav-chip.active { background:var(--crimson); color:var(--white); border-color:var(--crimson); }
+
+/* ── BACK TO TOP ── */
+.back-top { display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.15); transition:color 0.2s; margin-bottom:2rem; }
+.back-top:hover { color:var(--crimson); }
+
+/* ── THESIS BUILDER ── */
+.thesis-builder { background:var(--navy); border-radius:6px; padding:2rem; margin:1.5rem 0; color:var(--white); }
+.thesis-builder-title { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--gold); margin-bottom:0.4rem; }
+.thesis-builder-sub { font-size:0.9rem; color:rgba(255,255,255,0.55); margin-bottom:1.5rem; }
+.thesis-parts { display:grid; gap:1rem; }
+.thesis-part-label { font-family:'JetBrains Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--gold); text-transform:uppercase; margin-bottom:0.4rem; }
+.thesis-input { width:100%; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:4px; padding:0.7rem 1rem; color:var(--white); font-family:'Crimson Pro',serif; font-size:1rem; outline:none; transition:border-color 0.2s; }
+.thesis-input:focus { border-color:var(--gold); background:rgba(255,255,255,0.1); }
+.thesis-input::placeholder { color:rgba(255,255,255,0.25); font-style:italic; }
+.thesis-preview { margin-top:1.2rem; background:rgba(200,153,58,0.1); border:1px solid rgba(200,153,58,0.3); border-radius:4px; padding:1rem; font-style:italic; font-size:1rem; color:rgba(255,255,255,0.4); min-height:60px; line-height:1.7; }
+
+/* ── FOOTER ── */
+footer { background:var(--navy); border-top:1px solid rgba(200,153,58,0.2); padding:2.5rem 2rem; text-align:center; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem; }
+.footer-text { font-size:0.88rem; color:rgba(255,255,255,0.4); }
+.footer-links { display:flex; justify-content:center; gap:2rem; margin:1rem 0; list-style:none; }
+.footer-links a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+.footer-links a:hover { color:var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.fade-in-up { animation:fadeInUp 0.55s ease both; }
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand"><div class="nav-brand-star"></div><span class="nav-brand-text">APUSH <span>Scholar</span></span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../themes.html">Themes</a></li>
+    <li><a href="../skills.html">Essay Skills</a></li>
+    <li><a href="period-1.html" class="active">Periods</a></li>
+    <li class="nav-cta"><a href="../skills.html">Exam Guide →</a></li>
+  </ul>
+</nav>
+
+<header class="period-hero">
+  <div class="period-hero-bg"></div>
+  <div class="period-hero-inner">
+    <div>
+      <nav class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="../index.html#periods">Periods</a><span class="breadcrumb-sep">/</span>Period 1</nav>
+      <div class="period-eyebrow">APUSH Historical Period</div>
+      <h1 class="period-title">Period 1</h1>
+      <div class="period-subtitle">Contact, Conquest &amp; Early Colonization</div>
+      <p class="period-context">Long before European contact, diverse and complex civilizations thrived across the Americas — from the agricultural Pueblo peoples of the Southwest to the confederacies of the Northeast. The arrival of Columbus in 1492 initiated a catastrophic collision of worlds: European ambitions for wealth, religious conversion, and imperial glory unleashed devastating epidemics, forced labor systems, and cultural erasure upon Indigenous populations. The resulting Columbian Exchange permanently transformed ecology, demography, and economies on both sides of the Atlantic, setting the structural conditions for centuries of exploitation and colonization.</p>
+    </div>
+    <div class="period-meta">
+      <div class="period-badge-big">1</div>
+      <div class="period-exam-pct"><span class="period-exam-pct-num">5%</span><span class="period-exam-pct-label">of APUSH Exam</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- INTERACTIVE TIMELINE -->
+<section class="timeline-section">
+  <div class="timeline-section-inner">
+    <div class="timeline-section-header">
+      <span class="timeline-section-tag">Interactive Timeline</span>
+      <div class="timeline-section-line"></div>
+      <span class="timeline-section-tag">Click a node to explore</span>
+    </div>
+    <div id="period-timeline"></div>
+  </div>
+</section>
+
+<div class="content-wrapper">
+  <main class="main-col">
+    <a href="#" class="back-top">↑ Back to Top</a>
+
+    <!-- KEY CONCEPTS -->
+    <div class="section-header"><span class="section-tag">College Board Required</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Key Concepts &amp; Major Events</h2>
+    <div class="callout callout-exam">
+      <span class="callout-icon">🏛️</span>
+      <div><div class="callout-label">Exam Focus</div>
+      <div class="callout-body">Period 1 accounts for only <strong>5% of the exam</strong> and does NOT appear in the DBQ. Focus on SAQ and MCQ contexts. Key skills tested: comparing Native American societies, explaining the Columbian Exchange's consequences, and analyzing competing European colonial models.</div></div>
+    </div>
+    <div class="card card-navy-top">
+      <ul class="events-list">
+        <li class="event-item"><div class="event-year-badge">Pre-<br>1492</div><div class="event-content"><div class="event-title">Diverse Pre-Contact Native Civilizations</div><div class="event-desc">Across North America, Native peoples developed sophisticated societies shaped by their environments: the agricultural <strong>Pueblo</strong> peoples of the Southwest, the nomadic <strong>Great Plains</strong> nations following buffalo herds, the <strong>Iroquois Confederacy</strong> of the Northeast, and the maize-cultivating Mississippi Valley cultures. These societies were not static — they traded, warred, and adapted continuously.</div><div class="event-themes"><span class="theme-pill">MIG</span><span class="theme-pill">GEO</span><span class="theme-pill">SOC</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1492</div><div class="event-content"><div class="event-title">Columbus Arrives; Columbian Exchange Begins</div><div class="event-desc">Christopher Columbus, sailing for Spain, reached the Caribbean, initiating sustained contact between the Old and New Worlds. The resulting <strong>Columbian Exchange</strong> moved crops (potatoes, maize, tomatoes westward; wheat, sugar, horses eastward), animals, and — most catastrophically — diseases. European pathogens like smallpox killed up to <strong>90% of some Indigenous populations</strong>, fundamentally reshaping the demographic landscape.</div><div class="event-themes"><span class="theme-pill">GEO</span><span class="theme-pill">WXT</span><span class="theme-pill">MIG</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1494</div><div class="event-content"><div class="event-title">Treaty of Tordesillas</div><div class="event-desc">Spain and Portugal divided the non-European world between themselves along a line of longitude, with Spain taking most of the Americas. This agreement formalized European assumptions that Indigenous peoples had no sovereignty over their own territories — a legal and moral framework that underpinned centuries of conquest.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1512</div><div class="event-content"><div class="event-title">Encomienda System Established</div><div class="event-desc">Spain formalized the <strong>encomienda</strong>, a labor tribute system granting Spanish colonizers (encomenderos) the right to demand labor and tribute from Indigenous peoples in exchange for "protection" and Christian instruction. It produced a rigid racial caste system — <em>peninsulares, criollos, mestizos, mulattos, Indigenous, and African</em> — that structured colonial Latin American society for centuries.</div><div class="event-themes"><span class="theme-pill">WXT</span><span class="theme-pill">SOC</span><span class="theme-pill">PCE</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1519–21</div><div class="event-content"><div class="event-title">Conquest of the Aztec Empire</div><div class="event-desc">Hernán Cortés, exploiting internal political divisions and the devastating impact of smallpox, conquered the Aztec (Mexica) Empire at Tenochtitlán. Similarly, Francisco Pizarro destroyed the Inca Empire (1532). These conquests demonstrated the lethal combination of European military technology, disease, and political manipulation — and produced enormous wealth that funded further Spanish expansion.</div><div class="event-themes"><span class="theme-pill">WOR</span><span class="theme-pill">PCE</span><span class="theme-pill">GEO</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1550s</div><div class="event-content"><div class="event-title">Bartolomé de las Casas &amp; the Black Legend</div><div class="event-desc">Spanish friar <strong>Bartolomé de las Casas</strong> documented and condemned the brutal treatment of Indigenous peoples under Spanish colonialism in his <em>A Short Account of the Destruction of the Indies</em> (1542). His writings contributed to the "Black Legend" — a critique of Spanish colonialism used by rival European powers to justify their own colonial ambitions as more humane.</div><div class="event-themes"><span class="theme-pill">SOC</span><span class="theme-pill">NAT</span></div></div></li>
+        <li class="event-item"><div class="event-year-badge">1565–1607</div><div class="event-content"><div class="event-title">European Colonization Expands: St. Augustine to Jamestown</div><div class="event-desc">Spain founded <strong>St. Augustine, Florida</strong> (1565), the oldest permanent European settlement in North America. France established fur-trade networks through the Great Lakes. England's failed <strong>Roanoke Colony</strong> (1587) and the founding of <strong>Jamestown</strong> (1607) — funded by the Virginia Company, a joint-stock company — launched sustained English colonization, driven by profit rather than purely religious motives.</div><div class="event-themes"><span class="theme-pill">WXT</span><span class="theme-pill">MIG</span><span class="theme-pill">WOR</span></div></div></li>
+      </ul>
+    </div>
+
+    <!-- THEMATIC BREAKDOWN -->
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">MAGPIES Framework</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Thematic Breakdown</h2>
+    <div class="theme-card open">
+      <div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">G</div><div class="theme-card-title-wrap"><div class="theme-card-name">Geography &amp; Environment (GEO)</div><div class="theme-card-code">How environment shaped Native and colonial societies</div></div><span class="theme-card-chevron">▼</span></div>
+      <div class="theme-card-body"><p>Geography was destiny in Period 1. The diverse environmental zones of North America — arid Southwest, forested Northeast, fertile river valleys — produced radically different Indigenous societies. The <strong>Pueblo peoples</strong> built permanent adobe settlements around irrigated maize agriculture; Great Plains nations developed nomadic cultures following bison herds; Eastern Woodlands peoples built complex confederacies and traded along river networks.</p><p>European colonizers' geographic ambitions collided with these existing landscapes. Spanish colonizers were drawn to regions with mineral wealth (silver mines of Mexico and Peru); French colonizers followed fur trade networks along rivers; English colonizers sought fertile agricultural land on the Atlantic seaboard. The Columbian Exchange itself was fundamentally a geographic story — the movement of species, diseases, and peoples across oceanic barriers.</p><div class="theme-evidence"><strong>Evidence to Use:</strong> Pueblo cliff dwellings · Iroquois Confederacy river-based trade · Spanish silver mines of Potosí · French fur trade along the St. Lawrence · Columbian Exchange ecology</div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">A</div><div class="theme-card-title-wrap"><div class="theme-card-name">America in the World (WOR)</div><div class="theme-card-code">European imperial competition &amp; global trade</div></div><span class="theme-card-chevron">▼</span></div>
+      <div class="theme-card-body"><p>Period 1 must be understood within the context of European imperial rivalry. Spain, Portugal, France, the Netherlands, and England all competed for colonial territory, trade routes, and resources. <strong>Mercantilism</strong> — the economic theory that national wealth depended on accumulating gold and silver through favorable trade balances — drove states to extract colonial resources as aggressively as possible.</p><p>The Treaty of Tordesillas (1494) demonstrated that European powers treated the Americas as territory to be partitioned among themselves, without any regard for Indigenous sovereignty. Each imperial power developed different colonial strategies: Spain relied on conquest and forced labor; France prioritized trade alliances and intermarriage with Native nations; England initially used joint-stock companies and indentured labor.</p><div class="theme-evidence"><strong>Evidence to Use:</strong> Treaty of Tordesillas · Spanish encomienda system · French fur trade alliances · Dutch New Amsterdam · English Virginia Company joint-stock model</div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-header" onclick="toggleTheme(this)"><div class="theme-letter">S</div><div class="theme-card-title-wrap"><div class="theme-card-name">Social Structures &amp; Culture (SOC)</div><div class="theme-card-code">Race, religion, and cultural collision</div></div><span class="theme-card-chevron">▼</span></div>
+      <div class="theme-card-body"><p>Contact between Europeans, Native Americans, and Africans produced profound social disruption and new hierarchies. Spanish colonialism created a rigid <strong>casta system</strong> based on racial mixture and ancestry. The Catholic Church played a dual role — both condemning Indigenous brutality (Las Casas) and serving as an instrument of cultural erasure through forced conversion and mission systems.</p><p>The arrival of enslaved Africans — the first ship reached the Americas in 1525 — introduced a third population into this collision of worlds. The foundations of race-based chattel slavery were being constructed in this period, rooted in economic need and justified by emerging racial ideologies.</p><div class="theme-evidence"><strong>Evidence to Use:</strong> Bartolomé de las Casas · Spanish casta system · California missions · Catholic conversion efforts · 1525 African slave trade to Americas</div></div>
+    </div>
+
+    <!-- CCOT -->
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">Historical Thinking Skill</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">Skill Spotlight: CCOT</h2>
+    <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:1rem;font-style:italic"><strong>Prompt:</strong> Analyze continuities and changes in Native American societies as a result of European contact from 1492 to 1607.</p>
+    <div class="ccot-grid">
+      <div class="ccot-box continuity"><div class="ccot-box-label">⬌ Continuity</div><div class="ccot-box-title">What Persisted?</div><ul><li>Many Native nations maintained political independence through strategic alliances</li><li>Indigenous agricultural practices (maize, beans, squash) continued in most regions</li><li>Native trade networks persisted, though increasingly incorporating European goods</li><li>Spiritual and cultural practices survived, often blended with imposed Christianity</li></ul></div>
+      <div class="ccot-box change"><div class="ccot-box-label">→ Change</div><div class="ccot-box-title">What Changed &amp; When?</div><ul><li><strong>(1492–1520s)</strong> Epidemic disease collapsed many Indigenous populations by 50–90%</li><li><strong>(1519–1532)</strong> Spanish conquest destroyed Aztec and Inca empires</li><li><strong>(1512+)</strong> Encomienda forced Indigenous labor into colonial economic systems</li><li><strong>(1550s+)</strong> Forced religious conversion dismantled traditional spiritual structures</li></ul></div>
+    </div>
+    <div class="ccot-thesis-box"><div class="ccot-thesis-label">📝 Model Thesis</div><p class="ccot-thesis-text">"While Indigenous peoples maintained elements of political autonomy and cultural identity in regions distant from Spanish conquest, European contact fundamentally transformed Native American societies through the introduction of epidemic diseases, the imposition of forced labor systems, and the destruction of political sovereignty — changes that varied significantly by region and colonial power involved."</p></div>
+
+    <!-- PRIMARY SOURCE -->
+    <div class="section-header" style="margin-top:2rem"><span class="section-tag">Primary Source Practice</span><div class="section-header-line"></div></div>
+    <h2 class="section-title">HIPP Analysis: Bartolomé de las Casas (1542)</h2>
+    <div class="source-excerpt">
+      <p class="source-excerpt-text">"It was upon these gentle lambs… that from the very first day they clapped eyes on them the Spanish fell like ravening wolves upon the fold, or like tigers and savage lions who have not eaten meat for days. The pattern established at the outset has remained unchanged to this day, and the Spaniards still do nothing save tear the natives to shreds, murder them and inflict upon them untold misery, suffering and distress, tormenting, harassing and persecuting them mercilessly… The reason the Christians have murdered on such a vast scale and killed anyone and everyone in their way is purely and simply greed."</p>
+      <div class="source-excerpt-attr">— Bartolomé de las Casas, <em>A Short Account of the Destruction of the Indies</em>, 1542 &nbsp;·&nbsp; Written to King Charles I of Spain</div>
+    </div>
+    <div class="callout callout-exam"><span class="callout-icon">📋</span><div><div class="callout-label">Document Context</div><div class="callout-body"><strong>Bartolomé de las Casas</strong> (1484–1566) was a Spanish Dominican friar who had witnessed Spanish colonization firsthand in the Caribbean. A former encomendero himself, he underwent a moral conversion and became the most prominent European critic of Spanish colonial violence. His writings were addressed to the Spanish crown in an attempt to reform colonial policy.</div></div></div>
+    <div class="card card-gold-top">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:1.2rem">Complete Your HIPP Analysis</h3>
+      <div class="hipp-grid">
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">H</div><div class="hipp-name">Historical Context</div></div><div class="hipp-box-prompt">What was happening in Spanish colonies when this was written? What prior events shaped this moment?</div><textarea class="hipp-textarea" placeholder="Consider: What were conditions in the Caribbean and Mesoamerica by 1542? What had the encomienda system produced? How had disease affected Indigenous populations?"></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">I</div><div class="hipp-name">Intended Audience</div></div><div class="hipp-box-prompt">Who is las Casas addressing? Why does he write to the Spanish king rather than publish this independently?</div><textarea class="hipp-textarea" placeholder="Consider: What power did King Charles I have over colonial policy? Why would a formal written appeal to the crown be more effective than other methods? What does he hope the king will do?"></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">P</div><div class="hipp-name">Purpose</div></div><div class="hipp-box-prompt">What specific outcome does Las Casas want this document to produce? What reforms is he advocating for?</div><textarea class="hipp-textarea" placeholder="Consider: What policy does Las Casas want changed? Is his goal to end colonialism entirely or to reform how it operates? Why does he use such extreme emotional language about 'wolves' and 'tigers'?"></textarea></div>
+        <div class="hipp-box"><div class="hipp-box-header"><div class="hipp-letter">P</div><div class="hipp-name">Point of View</div></div><div class="hipp-box-prompt">How does Las Casas's identity as both a Spaniard and a former encomendero shape his argument?</div><textarea class="hipp-textarea" placeholder="Consider: Las Casas was himself a colonizer before his conversion. How does this complicate his credibility? Does he challenge Spanish colonialism itself, or just its methods? What limitations does his perspective have?"></textarea></div>
+      </div>
+      <div class="hipp-actions"><button class="btn btn-primary" onclick="checkHIPP()">✓ Review My Analysis</button><button class="btn btn-secondary" onclick="clearHIPP()">↺ Clear</button><span id="hipp-feedback" style="font-size:0.9rem;font-style:italic"></span></div>
+    </div>
+  </main>
+
+  <aside class="side-col">
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">Navigate Periods</div><div class="sidebar-card-subtitle">All 9 APUSH Periods</div></div><div class="sidebar-card-body"><div class="period-nav-strip"><a href="period-1.html" class="period-nav-chip active">P1</a><a href="period-2.html" class="period-nav-chip">P2</a><a href="period-3.html" class="period-nav-chip">P3</a><a href="period-4.html" class="period-nav-chip">P4</a><a href="period-5.html" class="period-nav-chip">P5</a><a href="period-6.html" class="period-nav-chip">P6</a><a href="period-7.html" class="period-nav-chip">P7</a><a href="period-8.html" class="period-nav-chip">P8</a><a href="period-9.html" class="period-nav-chip">P9</a></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">CB Key Concepts</div><div class="sidebar-card-subtitle">Period 1 · 1491–1607</div></div><div class="sidebar-card-body"><div class="key-concept-item"><div class="key-concept-num">Key Concept 1.1</div><div class="key-concept-text">As native populations migrated and settled across North America, they developed distinct and complex societies by adapting to diverse environments.</div></div><div class="key-concept-item"><div class="key-concept-num">Key Concept 1.2</div><div class="key-concept-text">Contact among Europeans, Native Americans, and Africans resulted in the Columbian Exchange and significant social, cultural, and political changes on both sides of the Atlantic.</div></div><div class="key-concept-item"><div class="key-concept-num">Key Concept 1.3</div><div class="key-concept-text">Europeans developed varied colonization patterns, influenced by imperial goals, cultures, and environments, and competed with each other and Native peoples for resources.</div></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header"><div class="sidebar-card-title">Key Terms</div><div class="sidebar-card-subtitle">Period 1 Must-Know</div></div><div class="sidebar-card-body"><div class="key-term"><span class="key-term-word">Columbian Exchange</span><span class="key-term-def">The transfer of plants, animals, diseases, and people between Old and New Worlds after 1492 — the most consequential ecological event in human history.</span></div><div class="key-term"><span class="key-term-word">Encomienda</span><span class="key-term-def">Spanish forced-labor system granting colonizers the right to demand tribute and labor from Indigenous peoples — justified as "Christian protection."</span></div><div class="key-term"><span class="key-term-word">Casta System</span><span class="key-term-def">Spanish colonial racial hierarchy based on ancestry and degree of European, Indigenous, and African "blood" — codified social inequality.</span></div><div class="key-term"><span class="key-term-word">Joint-Stock Company</span><span class="key-term-def">Business model spreading financial risk across investors; used by English (Virginia Company) and Dutch to fund colonization.</span></div><div class="key-term"><span class="key-term-word">Mercantilism</span><span class="key-term-def">Economic theory that national wealth depended on accumulating gold/silver through trade surpluses; drove colonial resource extraction.</span></div><div class="key-term"><span class="key-term-word">Iroquois Confederacy</span><span class="key-term-def">Military and political alliance of five (later six) northeastern nations — a sophisticated federal structure predating the U.S. Constitution.</span></div></div></div>
+    <div class="sidebar-card"><div class="sidebar-card-header crimson"><div class="sidebar-card-title">⚡ Exam Quick Tips</div><div class="sidebar-card-subtitle">Period 1 High-Yield Facts</div></div><div class="sidebar-card-body"><div class="key-term"><span class="key-term-word accent">Period 1 = SAQ/MCQ Only</span><span class="key-term-def">This period does NOT appear in DBQ. Focus your energy on being able to compare Native societies and explain the Columbian Exchange's effects.</span></div><div class="key-term"><span class="key-term-word accent">Disease is the Key Cause</span><span class="key-term-def">When explaining Spanish conquest success or demographic collapse, always lead with epidemic disease — military technology was secondary.</span></div><div class="key-term"><span class="key-term-word accent">Compare Colonial Models</span><span class="key-term-def">A common MCQ/SAQ: compare Spanish (encomienda, conquest) vs. French (trade alliances, intermarriage) vs. English (joint-stock, settlement) approaches.</span></div></div></div>
+  </aside>
+</div>
+
+<footer><div class="footer-brand">APUSH Scholar</div><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="period-2.html">Next: Period 2 →</a></li></ul><p class="footer-text">Educational resource aligned with College Board APUSH CED. Not affiliated with the College Board.</p></footer>
+
+<script>
+/**
+ * APUSH SCHOLAR — Interactive Timeline Component
+ * Usage:
+ *   new APUSHTimeline('container-id', eventsArray).render();
+ *
+ * Event object shape:
+ * {
+ *   year: "1765",
+ *   event: "Stamp Act",
+ *   summary: "Brief 1-2 sentence description.",
+ *   magpies: { code: "PCE", label: "Politics & Power" },
+ *   causation: "One sentence on cause or effect."
+ * }
+ */
+
+(function (global) {
+  'use strict';
+
+  const THEME_MAP = {
+    MIG: { bg: '#0d9488', light: 'rgba(13,148,136,0.15)', border: 'rgba(13,148,136,0.4)',  label: 'Migration & Settlement'  },
+    WOR: { bg: '#2563eb', light: 'rgba(37,99,235,0.15)',  border: 'rgba(37,99,235,0.4)',   label: 'America in the World'    },
+    GEO: { bg: '#16a34a', light: 'rgba(22,163,74,0.15)',  border: 'rgba(22,163,74,0.4)',   label: 'Geography & Environment' },
+    PCE: { bg: '#9b2335', light: 'rgba(155,35,53,0.15)',  border: 'rgba(155,35,53,0.4)',   label: 'Politics & Power'        },
+    NAT: { bg: '#7c3aed', light: 'rgba(124,58,237,0.15)', border: 'rgba(124,58,237,0.4)',  label: 'American Identity'       },
+    WXT: { bg: '#d97706', light: 'rgba(217,119,6,0.15)',  border: 'rgba(217,119,6,0.4)',   label: 'Economy & Technology'    },
+    SOC: { bg: '#db2777', light: 'rgba(219,39,119,0.15)', border: 'rgba(219,39,119,0.4)',  label: 'Social Structures'       },
+  };
+
+  class APUSHTimeline {
+    constructor(containerId, events) {
+      this.containerId = containerId;
+      this.container   = document.getElementById(containerId);
+      this.events      = events || [];
+      this.activeIndex = null;
+      this._isDragging = false;
+      this._startX     = 0;
+      this._scrollLeft = 0;
+    }
+
+    render() {
+      if (!this.container) return console.warn('APUSHTimeline: container not found:', this.containerId);
+      this.container.innerHTML = '';
+      this.container.className = 'apush-timeline-wrap';
+
+      // Scroll track
+      const scrollEl = document.createElement('div');
+      scrollEl.className = 'tl-scroll';
+
+      const track = document.createElement('div');
+      track.className = 'tl-track';
+
+      this.events.forEach((evt, i) => {
+        const theme = THEME_MAP[evt.magpies?.code] || THEME_MAP.PCE;
+        const node  = document.createElement('div');
+        node.className   = 'tl-node';
+        node.tabIndex    = 0;
+        node.setAttribute('role', 'button');
+        node.setAttribute('aria-label', `${evt.year}: ${evt.event}`);
+        node.dataset.index = i;
+        node.innerHTML = `
+          <div class="tl-node-year">${evt.year}</div>
+          <div class="tl-node-dot" style="border-color:${theme.border}">
+            <div class="tl-node-dot-inner" style="background:${theme.bg}"></div>
+          </div>
+          <div class="tl-node-label">${evt.event}</div>
+        `;
+        node.addEventListener('click',   () => this._selectEvent(i));
+        node.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this._selectEvent(i); } });
+        track.appendChild(node);
+      });
+
+      scrollEl.appendChild(track);
+      this._initDragScroll(scrollEl);
+
+      // Detail panel
+      const detailWrap = document.createElement('div');
+      detailWrap.className = 'tl-detail';
+      detailWrap.id = `tl-detail-${this.containerId}`;
+      detailWrap.innerHTML = `<p class="tl-placeholder">↑ Click any event node above to explore its historical details</p>`;
+
+      this.container.appendChild(scrollEl);
+      this.container.appendChild(detailWrap);
+      this._detailEl = detailWrap;
+      this._trackEl  = track;
+    }
+
+    _selectEvent(index) {
+      const nodes = this._trackEl.querySelectorAll('.tl-node');
+
+      // Toggle off if same node clicked
+      if (this.activeIndex === index) {
+        nodes[index].classList.remove('active');
+        this._closeDetail();
+        return;
+      }
+
+      // Activate node
+      nodes.forEach(n => n.classList.remove('active'));
+      nodes[index].classList.add('active');
+      this.activeIndex = index;
+
+      const evt   = this.events[index];
+      const theme = THEME_MAP[evt.magpies?.code] || THEME_MAP.PCE;
+      const label = evt.magpies?.label || theme.label;
+
+      this._detailEl.innerHTML = `
+        <div class="tl-detail-inner" style="border-left-color:${theme.bg}">
+          <div class="tl-detail-left">
+            <div class="tl-detail-year" style="color:${theme.bg}">${evt.year}</div>
+            <span class="tl-detail-badge" style="background:${theme.light};color:${theme.bg};border:1px solid ${theme.border}">
+              ${evt.magpies?.code} · ${label}
+            </span>
+          </div>
+          <div class="tl-detail-right">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+              <h3 class="tl-detail-name">${evt.event}</h3>
+              <button class="tl-detail-close" aria-label="Close">✕</button>
+            </div>
+            <p class="tl-detail-summary">${evt.summary}</p>
+            <div class="tl-detail-causation">
+              <span class="tl-detail-causation-label">⟶ Causation</span>
+              <p>${evt.causation}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Open with animation
+      this._detailEl.classList.add('open');
+
+      // Wire close button
+      this._detailEl.querySelector('.tl-detail-close').addEventListener('click', () => {
+        nodes.forEach(n => n.classList.remove('active'));
+        this._closeDetail();
+      });
+
+      // Scroll node into view within its scroll container
+      const nodeEl = nodes[index];
+      const scrollEl = nodeEl.closest('.tl-scroll');
+      if (scrollEl) {
+        const nodeLeft = nodeEl.offsetLeft - scrollEl.offsetLeft;
+        const center = nodeLeft - (scrollEl.clientWidth / 2) + (nodeEl.offsetWidth / 2);
+        scrollEl.scrollTo({ left: center, behavior: 'smooth' });
+      }
+    }
+
+    _closeDetail() {
+      this._detailEl.classList.remove('open');
+      this.activeIndex = null;
+      setTimeout(() => {
+        if (!this._detailEl.classList.contains('open')) {
+          this._detailEl.innerHTML = `<p class="tl-placeholder">↑ Click any event node above to explore its historical details</p>`;
+        }
+      }, 380);
+    }
+
+    _initDragScroll(el) {
+      el.addEventListener('mousedown', (e) => {
+        this._isDragging = true;
+        this._startX    = e.pageX - el.offsetLeft;
+        this._scrollLeft = el.scrollLeft;
+        el.style.userSelect = 'none';
+      });
+      el.addEventListener('mouseleave', () => { this._isDragging = false; el.style.userSelect = ''; });
+      el.addEventListener('mouseup',    () => { this._isDragging = false; el.style.userSelect = ''; });
+      el.addEventListener('mousemove',  (e) => {
+        if (!this._isDragging) return;
+        e.preventDefault();
+        const x    = e.pageX - el.offsetLeft;
+        const walk = (x - this._startX) * 1.5;
+        el.scrollLeft = this._scrollLeft - walk;
+      });
+    }
+  }
+
+  // Shared accordion helper — used by all period pages
+  global.toggleTheme = function(header) {
+    header.parentElement.classList.toggle('open');
+  };
+
+  // Shared thesis builder
+  global.buildThesis = function() {
+    const claim   = document.getElementById('t-claim')?.value.trim()  || '';
+    const reason  = document.getElementById('t-reason')?.value.trim() || '';
+    const nuance  = document.getElementById('t-nuance')?.value.trim() || '';
+    const preview = document.getElementById('thesis-preview');
+    if (!preview) return;
+    if (!claim && !reason && !nuance) {
+      preview.textContent = 'Your thesis will appear here as you type above…';
+      preview.style.color = 'rgba(255,255,255,0.4)';
+      return;
+    }
+    let t = claim;
+    if (reason) t += (t ? ', ' : '') + reason;
+    if (nuance)  t += (t ? ', ' : '') + nuance;
+    if (t && !t.endsWith('.')) t += '.';
+    preview.textContent = t;
+    preview.style.color = 'rgba(255,255,255,0.88)';
+  };
+
+  // Shared HIPP checker
+  global.checkHIPP = function() {
+    const boxes    = document.querySelectorAll('.hipp-textarea');
+    const feedback = document.getElementById('hipp-feedback');
+    if (!feedback) return;
+    let filled = 0;
+    boxes.forEach(b => { if (b.value.trim().length > 20) filled++; });
+    if (filled === 4) {
+      feedback.textContent = '✓ All four sections completed. Review your responses against the document context.';
+      feedback.style.color = '#2a7a2a';
+    } else if (filled > 0) {
+      feedback.textContent = `${filled}/4 sections completed. Make sure each response cites specific evidence.`;
+      feedback.style.color = '#7a6010';
+    } else {
+      feedback.textContent = 'Complete at least one section before reviewing.';
+      feedback.style.color = '#8b1f2f';
+    }
+  };
+
+  global.clearHIPP = function() {
+    document.querySelectorAll('.hipp-textarea').forEach(t => t.value = '');
+    const fb = document.getElementById('hipp-feedback');
+    if (fb) fb.textContent = '';
+  };
+
+  // Scroll-triggered fade-in for cards
+  global.initScrollAnimations = function() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity  = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.sidebar-card, .card, .theme-card, .callout').forEach(el => {
+      el.style.opacity   = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+  };
+
+  global.APUSHTimeline = APUSHTimeline;
+
+})(window);
+
+</script>
+<script>
+const TIMELINE_EVENTS = [
+  { year:"~1400s", event:"Pre-Contact Native Societies", summary:"Diverse and sophisticated Native civilizations thrived across North America, from Pueblo agricultural communities to nomadic Great Plains nations and the democratic Iroquois Confederacy in the Northeast.", magpies:{code:"MIG",label:"Migration & Settlement"}, causation:"Thousands of years of migration and adaptation produced distinct regional cultures, setting the social context that European contact would catastrophically disrupt." },
+  { year:"1492", event:"Columbus & the Columbian Exchange", summary:"Columbus's Caribbean landfall initiated sustained contact between the hemispheres, triggering the Columbian Exchange — the largest transfer of species, disease, and peoples in human history.", magpies:{code:"GEO",label:"Geography & Environment"}, causation:"European demand for trade routes to Asia drove exploration; the resulting ecological exchange devastated Indigenous populations through smallpox and other pathogens." },
+  { year:"1494", event:"Treaty of Tordesillas", summary:"Spain and Portugal divided the non-European world between themselves, formalizing the erasure of Indigenous sovereignty and setting the framework for European imperial competition.", magpies:{code:"WOR",label:"America in the World"}, causation:"Caused by rivalry between Spain and Portugal over colonial claims; it entrenched the principle that European powers could partition the globe without Indigenous consent." },
+  { year:"1512", event:"Encomienda System", summary:"Spain formalized the encomienda labor tribute system, requiring Indigenous peoples to provide labor and resources to Spanish colonizers — creating a racial caste hierarchy that would define colonial Latin America.", magpies:{code:"WXT",label:"Economy & Technology"}, causation:"Caused by Spanish need for labor to extract silver and agricultural wealth; it produced the casta system and laid the foundation for race-based exploitation." },
+  { year:"1519", event:"Cortés Conquers the Aztec Empire", summary:"Hernán Cortés, exploiting internal divisions and devastating smallpox epidemics, conquered the Aztec (Mexica) Empire — the greatest political entity in Mesoamerica — in just two years.", magpies:{code:"PCE",label:"Politics & Power"}, causation:"European military technology combined with smallpox and Indigenous political divisions enabled conquest; the fall of Tenochtitlán opened all of Mesoamerica to Spanish exploitation." },
+  { year:"1542", event:"Las Casas: A Short Account", summary:"Spanish friar Bartolomé de las Casas published his condemnation of Spanish colonial violence against Indigenous peoples, becoming the first major European critic of colonialism.", magpies:{code:"SOC",label:"Social Structures"}, causation:"Las Casas's own witnessing of colonial atrocities prompted this moral indictment; it contributed to the New Laws of 1542 limiting the encomienda and fueled Europe's 'Black Legend' of Spanish cruelty." },
+  { year:"1607", event:"Jamestown Founded", summary:"England's Virginia Company established Jamestown — the first permanent English settlement in North America — driven by profit motives and the promise of gold, though early settlers faced near-extinction conditions.", magpies:{code:"WXT",label:"Economy & Technology"}, causation:"English imperial ambitions and the joint-stock company model enabled Jamestown's funding; its survival depended on trade with the Powhatan Confederacy and the eventual discovery of tobacco as a cash crop." }
+];
+new APUSHTimeline('period-timeline', TIMELINE_EVENTS).render();
+initScrollAnimations();
+</script>
+</body>
+</html>
